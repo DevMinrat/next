@@ -1,2 +1,110 @@
 .footer {
+  padding: 6.4rem 0;
+
+  background: #374147;
+}
+
+.footer__inner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  padding-bottom: 6.4rem;
+  margin-bottom: 2.4rem;
+
+  border-bottom: 0.1rem solid #7e8b94;
+}
+
+.footer-logo {
+  display: flex;
+  flex-direction: column;
+
+  margin-right: 17rem;
+}
+
+.footer-logo__icon {
+  width: 11.3rem;
+  height: 4.7rem;
+
+  fill: white;
+
+  margin-bottom: 2.4rem;
+}
+
+.footer-logo__descr {
+  width: 100%;
+  max-width: 25.5rem;
+
+  font-weight: 600;
+  color: white;
+}
+
+.footer-nav {
+  display: flex;
+  align-items: flex-start;
+}
+
+.footer-nav__column {
+  display: grid;
+  gap: 0.8rem;
+
+  & + & {
+    margin-left: 9rem;
+  }
+}
+
+.footer-nav__heading {
+  color: white;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.footer-nav__link {
+  color: #7e8b94;
+}
+
+.footer-phones {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  width: 100%;
+  max-width: 30rem;
+}
+
+.footer-phones__content {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.footer-phones__link {
+  font-weight: 600;
+  font-size: 2rem;
+  color: #e67102;
+}
+
+.footer-address {
+  font-size: 2rem;
+  font-weight: 600;
+  color: white;
+
+  margin-top: 15rem;
+}
+
+.footer-copy {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  color: #7e8b94;
+
+  a {
+    color: #7e8b94;
+
+    &:hover {
+      color: $primary;
+    }
+  }
 }

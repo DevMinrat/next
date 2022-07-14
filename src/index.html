@@ -6,20 +6,565 @@ title: Главная страница
 <section class="intro">
     <div class="container">
         <div class="intro__inner">
-            <div class="intro__content">
-                <p class="intro__suptitle">Робот-помощник</p>
-                <h1 class="intro__title">Proton Trade</h1>
-                <p class="intro__subtitle">Облегчает торговлю на крипторынке</p>
+
+            <div class="intro-slider">
+                <div class="swiper-wrapper">
+                    <div class="intro-slider__item swiper-slide">
+                        <img src="assets/images/intro/intro-1.png" alt="">
+                    </div>
+                    <div class="intro-slider__item swiper-slide">
+                        <img src="assets/images/intro/intro-2.png" alt="">
+                    </div>
+                    <div class="intro-slider__item swiper-slide">
+                        <img src="assets/images/intro/intro-3.png" alt="">
+                    </div>
+                    <div class="intro-slider__item swiper-slide">
+                        <img src="assets/images/intro/intro-1.png" alt="">
+                    </div>
+                    <div class="intro-slider__item swiper-slide">
+                        <img src="assets/images/intro/intro-2.png" alt="">
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
             </div>
-            <div class="intro__try">
-                <button class="try-btn">
-                    Попробовать
-                    <svg class="try-arrow">
-                        <use xlink:href="#arrow"></use>
-                    </svg>
-                </button>
-                <div class="intro__try-text">Уже используют: 589 человек</div>
+        </div>
+    </div>
+</section>
+
+<section class="main-category section">
+    <div class="container">
+        <h2 class="section-heading">Популярные категории</h2>
+        <div class="main-category__inner">
+            <button class="main-category__all hollow-btn">
+                <span>Все категории</span>
+                <svg>
+                    <use href="#arrow"></use>
+                </svg>
+            </button>
+            <a class="main-category__item" href="#">
+                <img class="main-category__item-img" src="assets/images/category/cat-1.png" alt="">
+                <p class="main-category__item-descr">Охранно-пожарные системы
+                </p>
+            </a>
+            <a class="main-category__item" href="#">
+                <img class="main-category__item-img" src="assets/images/category/cat-2.png" alt="">
+                <p class="main-category__item-descr">Системы речевого оповещения</p>
+            </a>
+            <a class="main-category__item" href="#">
+                <img class="main-category__item-img" src="assets/images/category/cat-3.png" alt="">
+                <p class="main-category__item-descr">Системы видеонаблюдения</p>
+            </a>
+            <a class="main-category__item" href="#">
+                <img class="main-category__item-img" src="assets/images/category/cat-4.png" alt="">
+                <p class="main-category__item-descr">Системы контроля и управления доступом</p>
+            </a>
+            <a class="main-category__item" href="#">
+                <img class="main-category__item-img" src="assets/images/category/cat-5.png" alt="">
+                <p class="main-category__item-descr">Источники питания</p>
+            </a>
+            <a class="main-category__item" href="#">
+                <img class="main-category__item-img" src="assets/images/category/cat-6.png" alt="">
+                <p class="main-category__item-descr">Кабельная продукция</p>
+            </a>
+            <a class="main-category__item" href="#">
+                <img class="main-category__item-img" src="assets/images/category/cat-7.png" alt="">
+                <p class="main-category__item-descr">Взрывозащищенное оборудование</p>
+            </a>
+            <a class="main-category__item" href="#">
+                <img class="main-category__item-img" src="assets/images/category/cat-8.png" alt="">
+                <p class="main-category__item-descr">Расходные материалы</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="promotions section">
+    <div class="container">
+        <div class="promotions__inner">
+            <h2 class="section-heading">Акции</h2>
+            <a class="promotions__all hollow-btn" href="#">
+                <span>Все акции</span>
+                <svg>
+                    <use href="#arrow"></use>
+                </svg>
+            </a>
+            <div class="promotions-slider">
+                <div class="swiper-wrapper">
+                    <div class="product prom swiper-slide">
+                        <div class="product-img__wrapper">
+                            <img class="product__img" src="assets/images/product/prd-1.png" alt="">
+                            <a class="product-link" href="#">Подробнее</a>
+                        </div>
+                        <p class="product__name">
+                            Ethernet-FX-MM Волоконно-оптический преобразователь
+                        </p>
+                        <div class="product-price">
+                            <div class="product-price__item">
+                                <p class="product-price__item-prop">розничная</p>
+                                <div class="product-price__item-value">
+                                    <p class="product-price__item-value--old">6 500 ₽</p>
+                                    <p class="product-price__item-value--new">5 023.20 ₽</p>
+                                </div>
+
+                            </div>
+                            <div class="product-price__item">
+                                <p class="product-price__item-prop">оптовая</p>
+                                <p class="product-price__item-value">по запросу</p>
+                            </div>
+                            <div class="product-price__item">
+                                <p class="product-price__item-prop">мелкооптовая</p>
+                                <p class="product-price__item-value">по запросу</p>
+                            </div>
+                        </div>
+                        <div class="product-data">
+                            <div class="product-data__item">
+                                <p class="product-data__item-prop">Производитель</p>
+                                <a class="product-data__item-value" href="#">ЗАО НВП «Болид»</a>
+                            </div>
+                            <div class="product-data__item">
+                                <p class="product-data__item-prop">Артикул</p>
+                                <p class="product-data__item-value">852-170-700</p>
+                            </div>
+                        </div>
+                        <div class="product-counter">
+                            <button class="product-counter__btn pc-minus" type="button">-</button>
+                            <input class="product-counter__value" value="1"></input>
+                            <button class="product-counter__btn pc-plus" type="button">+</button>
+                        </div>
+                        <button class="product-cart-btn filled-btn" type="button">В корзину</button>
+                    </div>
+                    <div class="product new swiper-slide">
+                        <div class="product-img__wrapper">
+                            <img class="product__img" src="assets/images/product/prd-1.png" alt="">
+                            <a class="product-link" href="#">Подробнее</a>
+                        </div>
+                        <p class="product__name">
+                            Ethernet-FX-MM Волоконно-оптический преобразователь
+                        </p>
+                        <div class="product-price">
+                            <div class="product-price__item">
+                                <p class="product-price__item-prop">розничная</p>
+                                <div class="product-price__item-value">
+                                    <p class="product-price__item-value--old">6 500 ₽</p>
+                                    <p class="product-price__item-value--new">5 023.20 ₽</p>
+                                </div>
+
+                            </div>
+                            <div class="product-price__item">
+                                <p class="product-price__item-prop">оптовая</p>
+                                <p class="product-price__item-value">по запросу</p>
+                            </div>
+                            <div class="product-price__item">
+                                <p class="product-price__item-prop">мелкооптовая</p>
+                                <p class="product-price__item-value">по запросу</p>
+                            </div>
+                        </div>
+                        <div class="product-data">
+                            <div class="product-data__item">
+                                <p class="product-data__item-prop">Производитель</p>
+                                <a class="product-data__item-value" href="#">ЗАО НВП «Болид»</a>
+                            </div>
+                            <div class="product-data__item">
+                                <p class="product-data__item-prop">Артикул</p>
+                                <p class="product-data__item-value">852-170-700</p>
+                            </div>
+                        </div>
+                        <div class="product-counter">
+                            <button class="product-counter__btn pc-minus" type="button">-</button>
+                            <input class="product-counter__value" value="1"></input>
+                            <button class="product-counter__btn pc-plus" type="button">+</button>
+                        </div>
+                        <button class="product-cart-btn filled-btn" type="button">В корзину</button>
+                    </div>
+                    <div class="product prom swiper-slide">
+                        <div class="product-img__wrapper">
+                            <img class="product__img" src="assets/images/product/prd-1.png" alt="">
+                            <a class="product-link" href="#">Подробнее</a>
+                        </div>
+                        <p class="product__name">
+                            Ethernet-FX-MM Волоконно-оптический преобразователь
+                        </p>
+                        <div class="product-price">
+                            <div class="product-price__item">
+                                <p class="product-price__item-prop">розничная</p>
+                                <div class="product-price__item-value">
+                                    <p class="product-price__item-value--old">6 500 ₽</p>
+                                    <p class="product-price__item-value--new">5 023.20 ₽</p>
+                                </div>
+
+                            </div>
+                            <div class="product-price__item">
+                                <p class="product-price__item-prop">оптовая</p>
+                                <p class="product-price__item-value">по запросу</p>
+                            </div>
+                            <div class="product-price__item">
+                                <p class="product-price__item-prop">мелкооптовая</p>
+                                <p class="product-price__item-value">по запросу</p>
+                            </div>
+                        </div>
+                        <div class="product-data">
+                            <div class="product-data__item">
+                                <p class="product-data__item-prop">Производитель</p>
+                                <a class="product-data__item-value" href="#">ЗАО НВП «Болид»</a>
+                            </div>
+                            <div class="product-data__item">
+                                <p class="product-data__item-prop">Артикул</p>
+                                <p class="product-data__item-value">852-170-700</p>
+                            </div>
+                        </div>
+                        <div class="product-counter">
+                            <button class="product-counter__btn pc-minus" type="button">-</button>
+                            <input class="product-counter__value" value="1"></input>
+                            <button class="product-counter__btn pc-plus" type="button">+</button>
+                        </div>
+                        <button class="product-cart-btn filled-btn" type="button">В корзину</button>
+                    </div>
+                    <div class="product prom swiper-slide">
+                        <div class="product-img__wrapper">
+                            <img class="product__img" src="assets/images/product/prd-1.png" alt="">
+                            <a class="product-link" href="#">Подробнее</a>
+                        </div>
+                        <p class="product__name">
+                            Ethernet-FX-MM Волоконно-оптический преобразователь
+                        </p>
+                        <div class="product-price">
+                            <div class="product-price__item">
+                                <p class="product-price__item-prop">розничная</p>
+                                <div class="product-price__item-value">
+                                    <p class="product-price__item-value--old">6 500 ₽</p>
+                                    <p class="product-price__item-value--new">5 023.20 ₽</p>
+                                </div>
+
+                            </div>
+                            <div class="product-price__item">
+                                <p class="product-price__item-prop">оптовая</p>
+                                <p class="product-price__item-value">по запросу</p>
+                            </div>
+                            <div class="product-price__item">
+                                <p class="product-price__item-prop">мелкооптовая</p>
+                                <p class="product-price__item-value">по запросу</p>
+                            </div>
+                        </div>
+                        <div class="product-data">
+                            <div class="product-data__item">
+                                <p class="product-data__item-prop">Производитель</p>
+                                <a class="product-data__item-value" href="#">ЗАО НВП «Болид»</a>
+                            </div>
+                            <div class="product-data__item">
+                                <p class="product-data__item-prop">Артикул</p>
+                                <p class="product-data__item-value">852-170-700</p>
+                            </div>
+                        </div>
+                        <div class="product-counter">
+                            <button class="product-counter__btn pc-minus" type="button">-</button>
+                            <input class="product-counter__value" value="1"></input>
+                            <button class="product-counter__btn pc-plus" type="button">+</button>
+                        </div>
+                        <button class="product-cart-btn filled-btn" type="button">В корзину</button>
+                    </div>
+                    <div class="product prom swiper-slide">
+                        <div class="product-img__wrapper">
+                            <img class="product__img" src="assets/images/product/prd-1.png" alt="">
+                            <a class="product-link" href="#">Подробнее</a>
+                        </div>
+                        <p class="product__name">
+                            Ethernet-FX-MM Волоконно-оптический преобразователь
+                        </p>
+                        <div class="product-price">
+                            <div class="product-price__item">
+                                <p class="product-price__item-prop">розничная</p>
+                                <div class="product-price__item-value">
+                                    <p class="product-price__item-value--old">6 500 ₽</p>
+                                    <p class="product-price__item-value--new">5 023.20 ₽</p>
+                                </div>
+
+                            </div>
+                            <div class="product-price__item">
+                                <p class="product-price__item-prop">оптовая</p>
+                                <p class="product-price__item-value">по запросу</p>
+                            </div>
+                            <div class="product-price__item">
+                                <p class="product-price__item-prop">мелкооптовая</p>
+                                <p class="product-price__item-value">по запросу</p>
+                            </div>
+                        </div>
+                        <div class="product-data">
+                            <div class="product-data__item">
+                                <p class="product-data__item-prop">Производитель</p>
+                                <a class="product-data__item-value" href="#">ЗАО НВП «Болид»</a>
+                            </div>
+                            <div class="product-data__item">
+                                <p class="product-data__item-prop">Артикул</p>
+                                <p class="product-data__item-value">852-170-700</p>
+                            </div>
+                        </div>
+                        <div class="product-counter">
+                            <button class="product-counter__btn pc-minus" type="button">-</button>
+                            <input class="product-counter__value" value="1"></input>
+                            <button class="product-counter__btn pc-plus" type="button">+</button>
+                        </div>
+                        <button class="product-cart-btn filled-btn" type="button">В корзину</button>
+                    </div>
+                    <div class="product prom swiper-slide">
+                        <div class="product-img__wrapper">
+                            <img class="product__img" src="assets/images/product/prd-1.png" alt="">
+                            <a class="product-link" href="#">Подробнее</a>
+                        </div>
+                        <p class="product__name">
+                            Ethernet-FX-MM Волоконно-оптический преобразователь
+                        </p>
+                        <div class="product-price">
+                            <div class="product-price__item">
+                                <p class="product-price__item-prop">розничная</p>
+                                <div class="product-price__item-value">
+                                    <p class="product-price__item-value--old">6 500 ₽</p>
+                                    <p class="product-price__item-value--new">5 023.20 ₽</p>
+                                </div>
+
+                            </div>
+                            <div class="product-price__item">
+                                <p class="product-price__item-prop">оптовая</p>
+                                <p class="product-price__item-value">по запросу</p>
+                            </div>
+                            <div class="product-price__item">
+                                <p class="product-price__item-prop">мелкооптовая</p>
+                                <p class="product-price__item-value">по запросу</p>
+                            </div>
+                        </div>
+                        <div class="product-data">
+                            <div class="product-data__item">
+                                <p class="product-data__item-prop">Производитель</p>
+                                <a class="product-data__item-value" href="#">ЗАО НВП «Болид»</a>
+                            </div>
+                            <div class="product-data__item">
+                                <p class="product-data__item-prop">Артикул</p>
+                                <p class="product-data__item-value">852-170-700</p>
+                            </div>
+                        </div>
+                        <div class="product-counter">
+                            <button class="product-counter__btn pc-minus" type="button">-</button>
+                            <input class="product-counter__value" value="1"></input>
+                            <button class="product-counter__btn pc-plus" type="button">+</button>
+                        </div>
+                        <button class="product-cart-btn filled-btn" type="button">В корзину</button>
+                    </div>
+                    <div class="product prom swiper-slide">
+                        <div class="product-img__wrapper">
+                            <img class="product__img" src="assets/images/product/prd-1.png" alt="">
+                            <a class="product-link" href="#">Подробнее</a>
+                        </div>
+                        <p class="product__name">
+                            Ethernet-FX-MM Волоконно-оптический преобразователь
+                        </p>
+                        <div class="product-price">
+                            <div class="product-price__item">
+                                <p class="product-price__item-prop">розничная</p>
+                                <div class="product-price__item-value">
+                                    <p class="product-price__item-value--old">6 500 ₽</p>
+                                    <p class="product-price__item-value--new">5 023.20 ₽</p>
+                                </div>
+
+                            </div>
+                            <div class="product-price__item">
+                                <p class="product-price__item-prop">оптовая</p>
+                                <p class="product-price__item-value">по запросу</p>
+                            </div>
+                            <div class="product-price__item">
+                                <p class="product-price__item-prop">мелкооптовая</p>
+                                <p class="product-price__item-value">по запросу</p>
+                            </div>
+                        </div>
+                        <div class="product-data">
+                            <div class="product-data__item">
+                                <p class="product-data__item-prop">Производитель</p>
+                                <a class="product-data__item-value" href="#">ЗАО НВП «Болид»</a>
+                            </div>
+                            <div class="product-data__item">
+                                <p class="product-data__item-prop">Артикул</p>
+                                <p class="product-data__item-value">852-170-700</p>
+                            </div>
+                        </div>
+                        <div class="product-counter">
+                            <button class="product-counter__btn pc-minus" type="button">-</button>
+                            <input class="product-counter__value" value="1"></input>
+                            <button class="product-counter__btn pc-plus" type="button">+</button>
+                        </div>
+                        <button class="product-cart-btn filled-btn" type="button">В корзину</button>
+                    </div>
+                    <div class="product prom swiper-slide">
+                        <div class="product-img__wrapper">
+                            <img class="product__img" src="assets/images/product/prd-1.png" alt="">
+                            <a class="product-link" href="#">Подробнее</a>
+                        </div>
+                        <p class="product__name">
+                            Ethernet-FX-MM Волоконно-оптический преобразователь
+                        </p>
+                        <div class="product-price">
+                            <div class="product-price__item">
+                                <p class="product-price__item-prop">розничная</p>
+                                <div class="product-price__item-value">
+                                    <p class="product-price__item-value--old">6 500 ₽</p>
+                                    <p class="product-price__item-value--new">5 023.20 ₽</p>
+                                </div>
+
+                            </div>
+                            <div class="product-price__item">
+                                <p class="product-price__item-prop">оптовая</p>
+                                <p class="product-price__item-value">по запросу</p>
+                            </div>
+                            <div class="product-price__item">
+                                <p class="product-price__item-prop">мелкооптовая</p>
+                                <p class="product-price__item-value">по запросу</p>
+                            </div>
+                        </div>
+                        <div class="product-data">
+                            <div class="product-data__item">
+                                <p class="product-data__item-prop">Производитель</p>
+                                <a class="product-data__item-value" href="#">ЗАО НВП «Болид»</a>
+                            </div>
+                            <div class="product-data__item">
+                                <p class="product-data__item-prop">Артикул</p>
+                                <p class="product-data__item-value">852-170-700</p>
+                            </div>
+                        </div>
+                        <div class="product-counter">
+                            <button class="product-counter__btn pc-minus" type="button">-</button>
+                            <input class="product-counter__value" value="1"></input>
+                            <button class="product-counter__btn pc-plus" type="button">+</button>
+                        </div>
+                        <button class="product-cart-btn filled-btn" type="button">В корзину</button>
+                    </div>
+                </div>
             </div>
+        </div>
+    </div>
+</section>
+
+<section class="main-news section">
+    <div class="container">
+        <h2 class="section-heading">Новости</h2>
+        <div class="main-news__inner">
+            <a class="news-item" href="#">
+                <img class="news-item__img" src="assets/images/news/news-1.png" alt="">
+                <h3 class="news-item__heading">Обновление "Орион Видео Лайт"</h3>
+                <p class="news-item__descr">Было произведено обновление интерфейса, доработка уже имевшихся функций и
+                    исправление ошибок.</p>
+                <div class="news-item__info">
+                    <p class="news-item__date">16.05.2022</p>
+                    <p class="news-item__views">
+                        <svg>
+                            <use href="#eye"></use>
+                        </svg>
+                        <span>3241</span>
+                    </p>
+                </div>
+            </a>
+            <a class="news-item" href="#">
+                <img class="news-item__img" src="assets/images/news/news-1.png" alt="">
+                <h3 class="news-item__heading">Новые аккумуляторные батареи российского производства</h3>
+                <p class="news-item__descr">Аккумуляторы выполнены в самом популярном форм-факторе батарей ёмкостью 7
+                    А/ч и имеют такие же габаритные размеры и клеммы подключения.</p>
+                <div class="news-item__info">
+                    <p class="news-item__date">16.05.2022</p>
+                    <p class="news-item__views">
+                        <svg>
+                            <use href="#eye"></use>
+                        </svg>
+                        <span>3241</span>
+                    </p>
+                </div>
+            </a>
+            <a class="news-item" href="#">
+                <img class="news-item__img" src="assets/images/news/news-1.png" alt="">
+                <h3 class="news-item__heading">Компания «Болид» объявила о начале поставок извещателя пожарного дымового
+                    оптико-электронного линейного «С2000-ИПДЛ-Д».</h3>
+                <p class="news-item__descr">Извещатель пожарный дымовой оптико-электронный линейный двухпозиционный
+                    «С2000-ИПДЛ-Д» применяется в случае невозможности применения однопозиционного («С2000-ИПДЛ»)
+                    извещателя из-за наличия трудноустранимых помех отражения по ходу луча.</p>
+                <div class="news-item__info">
+                    <p class="news-item__date">16.05.2022</p>
+                    <p class="news-item__views">
+                        <svg>
+                            <use href="#eye"></use>
+                        </svg>
+                        <span>3241</span>
+                    </p>
+                </div>
+            </a>
+            <a class="news-item" href="#">
+                <img class="news-item__img" src="assets/images/news/news-2.png" alt="">
+                <h3 class="news-item__heading">Новая версия блока приемно-контрольного охранно-пожарного «СИГНАЛ-10»
+                </h3>
+                <p class="news-item__descr">В версии блока 2.00 реализована поддержка резервированного интерфейса RS-485
+                    для обеспечения требований СП 484.1311500.2020
+                </p>
+                <div class="news-item__info">
+                    <p class="news-item__date">16.05.2022</p>
+                    <p class="news-item__views">
+                        <svg>
+                            <use href="#eye"></use>
+                        </svg>
+                        <span>3241</span>
+                    </p>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="solutions section">
+    <div class="container">
+        <h2 class="section-heading">Типовые решения</h2>
+        <div class="solutions__inner">
+            <div class="solutions-item">
+                <div class="solutions-item__content">
+                    <p class="solutions-item__heading">Партнерский раздел</p>
+                    <img class="solutions-item__img" src="assets/images/solutions/s-1.png" alt="">
+                </div>
+                <a class="solutions-item__link filled-btn" href="#">Подробнее</a>
+            </div>
+            <a class="solutions-item__link" href="#">
+                <img src="assets/images/solutions/s-3.png" alt="">
+            </a>
+            <div class="solutions-item">
+                <div class="solutions-item__content">
+                    <p class="solutions-item__heading">Партнерский раздел</p>
+                    <img class="solutions-item__img" src="assets/images/solutions/s-2.png" alt="">
+                </div>
+                <a class="solutions-item__link filled-btn" href="#">Скачать каталог</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="partners section">
+    <div class="container">
+        <h2 class="section-heading">Наши партнеры</h2>
+        <div class="partners__inner">
+            <img class="partners__item-img" src="assets/images/partners/p-1.png" alt="">
+            <img class="partners__item-img" src="assets/images/partners/p-2.png" alt="">
+            <img class="partners__item-img" src="assets/images/partners/p-3.png" alt="">
+            <img class="partners__item-img" src="assets/images/partners/p-4.png" alt="">
+            <img class="partners__item-img" src="assets/images/partners/p-5.png" alt="">
+            <img class="partners__item-img" src="assets/images/partners/p-6.png" alt="">
+            <img class="partners__item-img" src="assets/images/partners/p-7.png" alt="">
+            <img class="partners__item-img" src="assets/images/partners/p-8.png" alt="">
+            <img class="partners__item-img" src="assets/images/partners/p-9.png" alt="">
+            <img class="partners__item-img" src="assets/images/partners/p-10.png" alt="">
+            <img class="partners__item-img" src="assets/images/partners/p-11.png" alt="">
+            <img class="partners__item-img" src="assets/images/partners/p-12.png" alt="">
+            <img class="partners__item-img" src="assets/images/partners/p-1.png" alt="">
+            <img class="partners__item-img" src="assets/images/partners/p-2.png" alt="">
+            <img class="partners__item-img" src="assets/images/partners/p-3.png" alt="">
+            <img class="partners__item-img" src="assets/images/partners/p-4.png" alt="">
+            <img class="partners__item-img" src="assets/images/partners/p-5.png" alt="">
+            <img class="partners__item-img" src="assets/images/partners/p-6.png" alt="">
+            <img class="partners__item-img" src="assets/images/partners/p-7.png" alt="">
+            <img class="partners__item-img" src="assets/images/partners/p-8.png" alt="">
+            <img class="partners__item-img" src="assets/images/partners/p-9.png" alt="">
+            <img class="partners__item-img" src="assets/images/partners/p-10.png" alt="">
+            <img class="partners__item-img" src="assets/images/partners/p-11.png" alt="">
+            <img class="partners__item-img" src="assets/images/partners/p-12.png" alt="">
         </div>
     </div>
 </section>

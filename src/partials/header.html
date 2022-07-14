@@ -1,26 +1,76 @@
 <header class="header">
     <div class="container">
-        <div class="header__inner">
-            <div class="header__logo">
-                <img src="assets/images/logo-icon.png" alt="">
-                <img src="assets/images/logo-text.svg" alt="">
+        <div class="header__top">
+            <div class="header-logo">
+                <svg class="header-logo__icon">
+                    <use href="#logo"></use>
+                </svg>
+                <p class="header-logo__descr">
+                    Комплексное обеспечение безопасности объектов
+                </p>
             </div>
-            <nav class="menu">
-                <ul class="menu__nav-list">
-                    <li class="nav-list__item">
-                        <a href="#opportunities" class="nav-list__item-link">Наши возможности</a>
-                    </li>
-                    <li class="nav-list__item">
-                        <a href="#getting" class="nav-list__item-link">Что вы получаете</a>
-                    </li>
-                    <li class="nav-list__item">
-                        <a href="#partners" class="nav-list__item-link">Партнеры</a>
-                    </li>
-                </ul>
-            </nav>
+            <div class="header-content">
+                <p class="header-delivery">Бесплатная доставка по Санкт-Петербургу</p>
+                <div class="header-phones">
+                    <a class="header-phones__item" href="tel:123">+7 (812) 333 47 36</a>
+                    <a class="header-phones__item" href="tel:123">+7 (812) 333 47 34</a>
+                </div>
+                <div class="header-search">
+                    <input type="text" placeholder="Я ищу">
+                    <button class="header-search__btn">
+                        <svg class="search-icon">
+                            <use href="#search"></use>
+                        </svg>
+                    </button>
+                </div>
+            </div>
 
-            <div class="burger-menu">
+            <div style="display: none;" class="burger-menu">
                 <div class="burger"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-bottom">
+        <div class="container">
+            <div class="header-bottom__inner">
+                <button class="catalog-btn">
+                    <svg>
+                        <use href="#burger"></use>
+                    </svg>
+                    КАТАЛОГ
+                </button>
+                <nav class="header-nav">
+                    <ul class="header-nav__list">
+                        <li class="header-nav__list-item">
+                            <a class="header-nav__item-link" href="#">Акции</a>
+                        </li>
+                        <li class="header-nav__list-item">
+                            <a class="header-nav__item-link" href="#">Услуги</a>
+                        </li>
+                        <li class="header-nav__list-item">
+                            <a class="header-nav__item-link" href="#">О компании</a>
+                        </li>
+                        <li class="header-nav__list-item">
+                            <a class="header-nav__item-link" href="#">Наши партнеры</a>
+                        </li>
+                        <li class="header-nav__list-item">
+                            <a class="header-nav__item-link" href="#">Контакты</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="header-cart">
+                    <a class="header-cart__link" href="#">
+                        <span class="header-cart__counter">2</span>
+                        <svg>
+                            <use href="#cart"></use>
+                        </svg>
+                    </a>
+                    <div class="header-cart__info">
+                        <p class="header-cart__info-descr">На сумму</p>
+                        <p class="header-cart__info-price">123 000 ₽</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

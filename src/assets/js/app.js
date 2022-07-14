@@ -1,1 +1,6 @@
-document.addEventListener("DOMContentLoaded", () => {});
+document.addEventListener("DOMContentLoaded", () => {
+  //= ../../../node_modules/swiper/swiper-bundle.js
+  //= components/
+
+
+});

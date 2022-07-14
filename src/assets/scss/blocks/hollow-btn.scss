@@ -1,0 +1,35 @@
+.hollow-btn {
+  display: flex;
+  align-items: center;
+
+  height: 4.8rem;
+
+  color: $primary;
+  font-weight: 700;
+
+  padding: 1rem 2rem 1rem 1.6rem;
+
+  border: 0.1rem solid $primary;
+  border-radius: 0.6rem;
+  background: transparent;
+
+  transition: all 0.1s linear;
+
+  &:hover {
+    color: $secondary;
+    border-color: $secondary;
+
+    svg {
+      fill: $secondary;
+    }
+  }
+
+  svg {
+    width: 2.4rem;
+    height: 2.4rem;
+
+    fill: $primary;
+
+    margin-left: 0.8rem;
+  }
+}

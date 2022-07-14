@@ -1,0 +1,220 @@
+.header__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 1.6rem 0;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  max-width: 110rem;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+}
+
+.header-logo__icon {
+  width: 15.5rem;
+  height: 6.4rem;
+
+  fill: $secondary;
+
+  margin-right: 3.5rem;
+}
+
+.header-logo__descr {
+  width: 100%;
+  max-width: 23.2rem;
+
+  font-weight: 600;
+}
+
+.header-phones {
+  display: flex;
+  align-items: center;
+}
+
+.header-phones__item {
+  font-weight: 600;
+
+  & + & {
+    margin-left: 4rem;
+  }
+}
+
+.header-search {
+  position: relative;
+
+  width: 100%;
+  max-width: 32.5rem;
+
+  input {
+    width: 100%;
+    height: 4rem;
+
+    padding: 0 2rem;
+    padding-right: 5rem;
+
+    border: 0.1rem solid #b9ddf8;
+    border-radius: 1rem;
+
+    &::placeholder {
+      font-family: "Raleway";
+      font-weight: 500;
+      font-size: 1.6rem;
+      line-height: 150%;
+      color: $black;
+    }
+  }
+}
+
+.header-search__btn {
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  z-index: 1;
+  transform: translateY(-50%);
+
+  display: flex;
+  align-items: center;
+
+  border: none;
+  background: none;
+
+  &:hover {
+    svg {
+      fill: $secondary;
+    }
+  }
+}
+
+.search-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+
+  fill: $black;
+}
+
+.header-bottom {
+  display: flex;
+  align-items: center;
+
+  height: 6.4rem;
+
+  background: $primary;
+}
+
+.header-bottom__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.catalog-btn {
+  display: flex;
+  align-items: center;
+
+  color: white;
+  font-weight: 600;
+
+  background: none;
+  border: none;
+
+  transition: all 0.1s linear;
+
+  &:hover {
+    color: $secondary;
+
+    svg {
+      fill: $secondary;
+    }
+  }
+
+  svg {
+    width: 2.4rem;
+    height: 2.4rem;
+
+    fill: white;
+
+    margin-right: 1.5rem;
+  }
+}
+
+.header-nav__list {
+  display: flex;
+}
+
+.header-nav__list-item {
+  & + & {
+    margin-left: 12rem;
+  }
+}
+
+.header-nav__item-link {
+  color: white;
+
+  &:hover {
+    color: $secondary;
+  }
+}
+
+.header-cart {
+  display: flex;
+  align-items: center;
+}
+
+.header-cart__link {
+  position: relative;
+
+  margin-right: 1.6rem;
+
+  svg {
+    width: 3.2rem;
+    height: 3.2rem;
+
+    fill: white;
+  }
+}
+
+.header-cart__counter {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 1.6rem;
+  min-height: 1.6rem;
+
+  padding: 0 0.4rem;
+
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+  line-height: 1;
+
+  background: #e67102;
+  border-radius: 50%;
+}
+
+.header-cart__info {
+  color: white;
+}
+
+.header-cart__info-descr {
+  font-size: 1.2rem;
+}
+
+.header-cart__info-price {
+  font-size: 1.6rem;
+}
