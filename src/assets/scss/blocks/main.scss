@@ -170,17 +170,17 @@
   height: auto;
 }
 
-.partners .section-heading {
+.partners-section .section-heading {
   margin-bottom: 7.5rem;
 }
 
-.partners__inner {
+.partners-section__inner {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 6.4rem 8.5rem;
 }
 
-.partners__item-img {
+.partners-section__item-img {
   width: 20rem;
   height: 9.6rem;
   object-fit: cover;

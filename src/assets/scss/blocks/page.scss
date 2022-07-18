@@ -1,3 +1,77 @@
 .page {
   overflow: hidden;
 }
+
+.page-wrapper {
+  padding-top: 6.4rem;
+  margin-bottom: 12rem;
+}
+
+.page-heading {
+  font-size: 4.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: $secondary;
+
+  margin-bottom: 4.4rem;
+}
+
+.page-pagination {
+  display: flex;
+  align-items: center;
+
+  justify-content: center;
+}
+
+.page-pagination__link {
+  &:not(:first-child):not(:last-child) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 3.2rem;
+    height: 3.2rem;
+
+    border-radius: 0.4rem;
+
+    &.active {
+      background-color: #b9ddf8;
+    }
+  }
+  & + & {
+    margin-left: 1.6rem;
+  }
+  &:hover {
+    color: $primary;
+
+    svg {
+      fill: $primary;
+    }
+  }
+  svg {
+    width: 2.4rem;
+    height: 2.4rem;
+
+    fill: $black;
+  }
+}
+
+.pgtn-back {
+  svg {
+    transform: rotate(180deg);
+
+    margin-right: 0.4rem;
+  }
+}
+
+.pgtn-back,
+.pgtn-next {
+  display: flex;
+  align-items: center;
+}
+
+.pgtn-next {
+  svg {
+    margin-left: 0.4rem;
+  }
+}

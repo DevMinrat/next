@@ -1,0 +1,41 @@
+.breadcrumb-wrapper {
+  min-height: 3rem;
+
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 2.3rem;
+
+  @include breakpoint($sm-bp) {
+    display: none;
+  }
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.breadcrumb a::after {
+  content: ">";
+  padding: 0 1rem;
+  color: $black;
+}
+
+.breadcrumb span,
+.breadcrumb a {
+  font-weight: 300;
+  font-size: 1.4rem;
+  color: $black;
+
+  transition: all 0.2s linear;
+}
+
+.breadcrumb span {
+  color: #7e8b94;
+}
+
+.breadcrumb a:hover {
+  color: $primary;
+}

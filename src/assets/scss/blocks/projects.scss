@@ -1,0 +1,152 @@
+.projects__inner {
+  position: relative;
+}
+
+.projects-slider {
+  margin-bottom: 12rem;
+
+  .swiper-wrapper {
+    flex-wrap: wrap;
+    gap: 3rem;
+
+    .swiper-slide {
+      flex-shrink: 1;
+      height: 30rem;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+.projects-slider__item:nth-child(1),
+.projects-slider__item:nth-child(6) {
+  width: 100%;
+  max-width: 68.2rem;
+}
+
+.projects-slider__item:nth-child(2),
+.projects-slider__item:nth-child(5) {
+  width: 100%;
+  max-width: 39.7rem;
+}
+
+.projects-slider__item:nth-child(3),
+.projects-slider__item:nth-child(4) {
+  width: 100%;
+  max-width: 54rem;
+}
+
+.projects-info {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+
+  transform: translate(-50%, -50%);
+
+  width: 100%;
+  max-width: 82.5rem;
+
+  display: flex;
+  align-items: center;
+
+  padding: 4rem;
+
+  background: #ffffff;
+  border-radius: 1.6rem;
+}
+
+.projects-info__dates {
+  font-weight: 700;
+  font-size: 4.8rem;
+  line-height: 120%;
+  color: #e67102;
+
+  margin-right: 10.2rem;
+}
+
+.projects-info__descr {
+  width: 100%;
+  max-width: 29.5rem;
+
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+.projects-clients__inner {
+  display: flex;
+  align-items: flex-start;
+}
+
+.projects-clients__navs {
+  display: grid;
+  gap: 4rem;
+
+  width: 100%;
+  max-width: 57.5rem;
+
+  margin-right: 19rem;
+}
+
+.projects-clients__navs-btn {
+  display: flex;
+  align-items: center;
+
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: left;
+
+  border: none;
+  background: transparent;
+
+  &:hover {
+    color: #e67102;
+
+    svg {
+      opacity: 1;
+    }
+  }
+  &.tabs-btn_active {
+    color: #e67102;
+
+    svg {
+      opacity: 1;
+    }
+  }
+
+  svg {
+    width: 2.4rem;
+    height: 2.4rem;
+
+    fill: #e67102;
+
+    margin-left: 1.6rem;
+
+    opacity: 0;
+  }
+}
+
+.projects-clients__tab {
+  display: none;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  max-height: 35rem;
+
+  gap: 2rem 21.5rem;
+
+  &.tabs-pane_show {
+    display: flex;
+  }
+}
+
+.projects-partners {
+  .section-heading {
+    color: $secondary;
+  }
+}
