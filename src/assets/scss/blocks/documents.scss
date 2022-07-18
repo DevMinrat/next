@@ -1,0 +1,45 @@
+.documents__inner {
+  display: flex;
+  align-items: flex-start;
+}
+
+.documents__content {
+  column-count: 2;
+
+  margin-right: 2.6rem;
+}
+
+.documents__link {
+  display: flex;
+  align-items: center;
+
+  font-size: 2rem;
+  font-weight: 600;
+
+  & + & {
+    margin-top: 2.4rem;
+  }
+
+  svg {
+    width: 2.4rem;
+    height: 2.4rem;
+
+    fill: $primary;
+
+    margin-left: 1.6rem;
+
+    opacity: 0;
+  }
+
+  &:hover {
+    svg {
+      opacity: 1;
+    }
+  }
+}
+
+.documents__img {
+  width: 100%;
+  max-width: 47.8rem;
+  height: auto;
+}
