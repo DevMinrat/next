@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   //= ../../../node_modules/swiper/swiper-bundle.js
+  //= ../../../node_modules/choices.js/public/assets/scripts/choices.js
   //= components/
 
   const headerBottom = document.querySelector(".header-bottom");
@@ -36,27 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
   //   menu.classList.remove("active");
   //   hmBtn.classList.remove("active");
   // });
-
-  // const faqAccTitle = document.querySelectorAll(".faq__item-title"),
-  //   faqAccText = document.querySelectorAll(".faq__item-descr");
-
-  // if (faqAccTitle) {
-  //   for (let i = 0; i < faqAccTitle.length; i++) {
-  //     faqAccText[0].style.maxHeight = faqAccText[0].scrollHeight + "px";
-
-  //     faqAccTitle[i].addEventListener("click", function () {
-  //       this.classList.toggle("active");
-
-  //       let panel = faqAccText[i];
-
-  //       if (panel.style.maxHeight) {
-  //         panel.style.maxHeight = null;
-  //       } else {
-  //         panel.style.maxHeight = panel.scrollHeight + "px";
-  //       }
-  //     });
-  //   }
-  // }
 
   class ItcTabs {
     constructor(target, config) {
@@ -109,5 +89,134 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (document.querySelector(".projects-clients")) {
     new ItcTabs(".projects-clients");
+  }
+  if (document.querySelector(".catp-aside")) {
+    new ItcTabs(".catp-aside");
+  }
+
+  const catpAsideHeading = document.querySelectorAll(
+      ".catpAside-link__expand-heading"
+    ),
+    catpAsideSublinks = document.querySelectorAll(".catpAside-link__subLinks");
+
+  if (catpAsideHeading.length > 0) {
+    for (let i = 0; i < catpAsideHeading.length; i++) {
+      catpAsideHeading[i].addEventListener("click", function () {
+        this.classList.toggle("rolled");
+
+        let panel = catpAsideSublinks[i];
+
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+      });
+    }
+  }
+
+  // const catpFilterSelects = document.querySelectorAll(".catp-filters__select");
+
+  // if (catpFilterSelects.length > 0) {
+  //   catpFilterSelects.forEach((el) => {
+  //     new Choices(el, {
+  //       placeholder: true,
+  //       placeholderValue: null,
+  //       searchPlaceholderValue: null,
+  //       searchEnabled: false,
+  //       shouldSort: false,
+  //       itemSelectText: "",
+  //     });
+  //   });
+  // }
+
+  const filterHeadings = document.querySelectorAll(".filter-item__heading");
+  const filterCheckboxes = document.querySelectorAll(".filter-item__checbox");
+  const filterItems = document.querySelectorAll(".filter-item");
+
+  if (filterHeadings.length > 0) {
+    filterHeadings.forEach((el, idx) => {
+      el.addEventListener("click", () => {
+        filterHeadings.forEach((el, index) => {
+          if (idx != index) {
+            el.classList.remove("active");
+          }
+        });
+
+        el.classList.toggle("active");
+      });
+    });
+
+    filterCheckboxes.forEach((el) => {
+      el.addEventListener("change", () => {
+        checkCheckboxes(el.parentElement.parentElement);
+      });
+    });
+
+    filterItems.forEach((el) => {
+      checkCheckboxes(el);
+    });
+
+    function checkCheckboxes(parent) {
+      let isChecked = false;
+      let checkboxes = parent.querySelectorAll(".filter-item__checbox");
+
+      checkboxes.forEach((el) => {
+        if (el.checked) {
+          isChecked = true;
+          parent.classList.add("checked");
+        }
+      });
+
+      if (!isChecked) {
+        parent.classList.remove("checked");
+      }
+
+      return isChecked;
+    }
+
+    window.addEventListener("click", (e) => {
+      if (
+        e.target.parentElement.className != "filter-item" &&
+        e.target.parentElement.className != "filter-item checked" &&
+        e.target.parentElement.className != "filter-item__heading active" &&
+        e.target.parentElement.className != "filter-item__content"
+      ) {
+        filterHeadings.forEach((el) => {
+          if (el.classList.contains("active")) {
+            el.classList.remove("active");
+          }
+        });
+      }
+    });
+
+    const filtersReset = document.querySelector(".catp-filters__reset");
+
+    filtersReset.addEventListener("click", () => {
+      document.querySelector(".catp-filters").reset();
+      filterItems.forEach((el) => {
+        checkCheckboxes(el);
+      });
+    });
+
+    const catpRow = document.querySelector("#catp-row"),
+      catpGrid = document.querySelector("#catp-grid");
+    const catpContent = document.querySelector(".catp__content");
+
+    catpRow.addEventListener("click", () => {
+      catpRow.classList.add("active");
+      catpGrid.classList.remove("active");
+
+      catpContent.classList.add("row-layout");
+      catpContent.classList.remove("grid-layout");
+    });
+
+    catpGrid.addEventListener("click", () => {
+      catpRow.classList.remove("active");
+      catpGrid.classList.add("active");
+
+      catpContent.classList.remove("row-layout");
+      catpContent.classList.add("grid-layout");
+    });
   }
 });

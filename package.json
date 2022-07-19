@@ -31,6 +31,7 @@
     "IE 10"
   ],
   "dependencies": {
+    "choices.js": "^10.1.0",
     "swiper": "^8.0.7"
   }
 }

@@ -50,20 +50,22 @@
 .modal-close-btn {
   position: absolute;
   top: 0;
-  right: -4rem;
+  right: -5rem;
   z-index: 1;
 
-  width: 3rem;
-  height: 3rem;
+  width: 4rem;
+  height: 4rem;
 
-  font-weight: 400;
-  font-size: 7rem;
-  line-height: 0.4;
-  color: #e0e0e0;
-  text-align: center;
   cursor: pointer;
 
   transition: all 0.1s linear;
+
+  svg {
+    width: 4rem;
+    height: 4rem;
+
+    fill: white;
+  }
 
   &:hover {
     color: $secondary;
