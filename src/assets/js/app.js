@@ -93,6 +93,9 @@ document.addEventListener("DOMContentLoaded", () => {
   if (document.querySelector(".catp-aside")) {
     new ItcTabs(".catp-aside");
   }
+  if (document.querySelector(".prodp-info")) {
+    new ItcTabs(".prodp-info");
+  }
 
   const catpAsideHeading = document.querySelectorAll(
       ".catpAside-link__expand-heading"
