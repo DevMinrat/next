@@ -5,6 +5,11 @@
 .page-wrapper {
   padding-top: 6.4rem;
   margin-bottom: 12rem;
+
+  @include breakpoint($sm-bp) {
+    padding-top: 4rem;
+    margin-bottom: 8rem;
+  }
 }
 
 .page-heading {
@@ -14,6 +19,16 @@
   color: $secondary;
 
   margin-bottom: 4.4rem;
+
+  @include breakpoint($lg-bp) {
+    font-size: 3.6rem;
+  }
+
+  @include breakpoint($sm-bp) {
+    font-size: 2.8rem;
+
+    margin-bottom: 2.4rem;
+  }
 }
 
 .page-pagination {

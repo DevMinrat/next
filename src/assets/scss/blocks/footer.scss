@@ -2,6 +2,10 @@
   padding: 6.4rem 0;
 
   background: #374147;
+
+  @include breakpoint($sm-bp) {
+    padding: 4rem 0;
+  }
 }
 
 .footer__inner {
@@ -13,6 +17,10 @@
   margin-bottom: 2.4rem;
 
   border-bottom: 0.1rem solid #7e8b94;
+
+  @include breakpoint($lg-bp) {
+    flex-wrap: wrap;
+  }
 }
 
 .footer-logo {
@@ -20,15 +28,39 @@
   flex-direction: column;
 
   margin-right: 17rem;
+
+  @include breakpoint($xl-bp) {
+    margin-right: 8rem;
+  }
+
+  @include breakpoint($lg-bp) {
+    order: 1;
+    flex-direction: row;
+
+    width: 100%;
+
+    margin-bottom: 4rem;
+  }
+
+  @include breakpoint($sm-bp) {
+    margin-right: 0;
+    align-items: flex-end;
+  }
 }
 
 .footer-logo__icon {
-  width: 11.3rem;
+  width: 100%;
+  max-width: 11.3rem;
   height: 4.7rem;
 
   fill: white;
 
   margin-bottom: 2.4rem;
+
+  @include breakpoint($lg-bp) {
+    margin-bottom: 0;
+    margin-right: 2rem;
+  }
 }
 
 .footer-logo__descr {
@@ -37,11 +69,26 @@
 
   font-weight: 600;
   color: white;
+
+  @include breakpoint($sm-bp) {
+    max-width: unset;
+
+    font-size: 1.2rem;
+  }
 }
 
 .footer-nav {
   display: flex;
   align-items: flex-start;
+
+  @include breakpoint($lg-bp) {
+    order: 3;
+  }
+
+  @include breakpoint($sm-bp) {
+    flex-wrap: wrap;
+    gap: 4rem;
+  }
 }
 
 .footer-nav__column {
@@ -50,6 +97,14 @@
 
   & + & {
     margin-left: 9rem;
+
+    @include breakpoint($xl-bp) {
+      margin-left: 3rem;
+    }
+
+    @include breakpoint($sm-bp) {
+      margin-left: 0;
+    }
   }
 }
 
@@ -58,10 +113,18 @@
   font-size: 2rem;
   font-weight: 600;
   line-height: 1.2;
+
+  @include breakpoint($sm-bp) {
+    font-size: 1.6rem;
+  }
 }
 
 .footer-nav__link {
   color: #7e8b94;
+
+  @include breakpoint($sm-bp) {
+    font-size: 1.4rem;
+  }
 }
 
 .footer-phones {
@@ -72,6 +135,15 @@
 
   width: 100%;
   max-width: 30rem;
+
+  @include breakpoint($lg-bp) {
+    order: 2;
+
+    align-items: flex-start;
+    flex-direction: column-reverse;
+
+    margin-bottom: 4rem;
+  }
 }
 
 .footer-phones__content {
@@ -83,6 +155,10 @@
   font-weight: 600;
   font-size: 2rem;
   color: #e67102;
+
+  @include breakpoint($sm-bp) {
+    font-size: 1.6rem;
+  }
 }
 
 .footer-address {
@@ -91,6 +167,14 @@
   color: white;
 
   margin-top: 15rem;
+
+  @include breakpoint($lg-bp) {
+    margin-top: 0;
+  }
+
+  @include breakpoint($sm-bp) {
+    font-size: 1.6rem;
+  }
 }
 
 .footer-copy {
@@ -106,5 +190,12 @@
     &:hover {
       color: $primary;
     }
+  }
+
+  @include breakpoint($sm-bp) {
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    font-size: 1.4rem;
   }
 }

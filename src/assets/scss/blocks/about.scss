@@ -1,5 +1,9 @@
 .about-wrapper {
   margin-bottom: 12rem;
+
+  @include breakpoint($sm-bp) {
+    margin-bottom: 8rem;
+  }
 }
 
 .about {
@@ -8,18 +12,39 @@
   background: url(../images/about/about-img.png) no-repeat;
   background-position: right 100%;
 
+  @include breakpoint($xxl-bp) {
+    background-position: right -40% center;
+  }
+  @include breakpoint($xl-bp) {
+    background-position: right -60rem center;
+  }
+
+  @include breakpoint($lg-bp) {
+    padding-bottom: 22rem;
+    background-position: center bottom -22rem;
+    background-size: 100%;
+  }
+
+  @include breakpoint($sm-bp) {
+    padding-top: 4rem;
+
+    background-position: center bottom;
+  }
+
   .section-heading {
     width: 100%;
     max-width: 82.6rem;
 
     color: $secondary;
-
-    margin-bottom: 4.4rem;
   }
 }
 
 .about__inner {
   padding-bottom: 6.4rem;
+
+  @include breakpoint($sm-bp) {
+    padding-bottom: 4rem;
+  }
 }
 
 .about-intro__list {
@@ -32,6 +57,10 @@
 .about-intro__list-item {
   & + & {
     margin-top: 1.6rem;
+
+    @include breakpoint($sm-bp) {
+      margin-top: 0.6rem;
+    }
   }
 }
 
@@ -42,17 +71,36 @@
   margin-bottom: 12rem;
 
   background: #cee5ff;
+
+  @include breakpoint($lg-bp) {
+    margin-bottom: 8rem;
+  }
+  @include breakpoint($sm-bp) {
+    padding: 4rem 0;
+    margin-bottom: 4rem;
+  }
 }
 
 .about-data__inner {
   display: flex;
   justify-content: space-between;
+
+  @include breakpoint($lg-bp) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem 2.4rem;
+  }
 }
 
 .about-data__item-descr {
   font-size: 2rem;
 
   margin-bottom: 0.8rem;
+
+  @include breakpoint($sm-bp) {
+    font-size: 1.6rem;
+    margin-bottom: 0.4rem;
+  }
 }
 
 .about-data__item-count {
@@ -60,6 +108,10 @@
   font-weight: 700;
   line-height: 1.2;
   color: $secondary;
+
+  @include breakpoint($sm-bp) {
+    font-size: 2.8rem;
+  }
 }
 
 .about-content__inner {
@@ -70,8 +122,8 @@
 
   font-size: 2rem;
 
-  p + p {
-    padding-top: 1.5rem;
+  @include breakpoint($sm-bp) {
+    font-size: 1.6rem;
   }
 
   h2 {
@@ -81,6 +133,12 @@
     color: $secondary;
 
     margin-bottom: 2.4rem;
+
+    @include breakpoint($sm-bp) {
+      font-size: 2rem;
+
+      margin-bottom: 2rem;
+    }
   }
 
   ol {
@@ -93,6 +151,10 @@
 
   li {
     font-size: 2rem;
+
+    @include breakpoint($sm-bp) {
+      font-size: 1.6rem;
+    }
   }
 
   li + li {

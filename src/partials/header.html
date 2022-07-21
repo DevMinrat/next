@@ -25,7 +25,7 @@
                 </div>
             </div>
 
-            <div style="display: none;" class="burger-menu">
+            <div class="burger-menu">
                 <div class="burger"></div>
             </div>
         </div>
@@ -40,16 +40,39 @@
                     </svg>
                     КАТАЛОГ
                 </button>
+
                 <nav class="header-nav">
                     <ul class="header-nav__list">
                         <li class="header-nav__list-item">
                             <a class="header-nav__item-link" href="#">Акции</a>
                         </li>
-                        <li class="header-nav__list-item">
-                            <a class="header-nav__item-link" href="#">Услуги</a>
+                        <li class="header-nav__list-item header-nav__list-item--dropdown">
+                            <p class="header-nav__item-link dropdown-heading">Услуги
+                                <svg>
+                                    <use href="#chevron"></use>
+                                </svg>
+                            </p>
+                            <div class="header-nav__item-sublinks">
+                                <a href="#">О нас</a>
+                                <a href="#">Наши проекты</a>
+                                <a href="#">Лицензии</a>
+                                <a href="#">Новости</a>
+                                <a href="#">Нормативные документы</a>
+                            </div>
                         </li>
-                        <li class="header-nav__list-item">
-                            <a class="header-nav__item-link" href="#">О компании</a>
+                        <li class="header-nav__list-item header-nav__list-item--dropdown">
+                            <p class="header-nav__item-link dropdown-heading">О компании
+                                <svg>
+                                    <use href="#chevron"></use>
+                                </svg>
+                            <div class="header-nav__item-sublinks">
+                                <a href="#">О нас</a>
+                                <a href="#">Наши проекты</a>
+                                <a href="#">Лицензии</a>
+                                <a href="#">Новости</a>
+                                <a href="#">Нормативные документы</a>
+                            </div>
+                            </p>
                         </li>
                         <li class="header-nav__list-item">
                             <a class="header-nav__item-link" href="#">Наши партнеры</a>
@@ -58,6 +81,21 @@
                             <a class="header-nav__item-link" href="#">Контакты</a>
                         </li>
                     </ul>
+                    <div class="header-content header-content--mob">
+                        <p class="header-delivery">Бесплатная доставка по Санкт-Петербургу</p>
+                        <div class="header-phones">
+                            <a class="header-phones__item" href="tel:123">+7 (812) 333 47 36</a>
+                            <a class="header-phones__item" href="tel:123">+7 (812) 333 47 34</a>
+                        </div>
+                        <div class="header-search">
+                            <input type="text" placeholder="Я ищу">
+                            <button class="header-search__btn">
+                                <svg class="search-icon">
+                                    <use href="#search"></use>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
                 </nav>
                 <div class="header-cart">
                     <a class="header-cart__link" href="#">
@@ -70,6 +108,100 @@
                         <p class="header-cart__info-descr">На сумму</p>
                         <p class="header-cart__info-price">123 000 ₽</p>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="menu-catalog">
+        <button class="menu-catalog__close"><svg>
+                <use href="#close"></use>
+            </svg>
+        </button>
+        <div class="menu-catalog__inner">
+            <div class="menu-catalog__item">
+                <a class="menu-catalog__main-link" href="#1">Охранно-пожарные системы
+                    <svg>
+                        <use href="#chevron"></use>
+                    </svg>
+                </a>
+                <div class="menu-catalog__sublinks">
+                    <a href="#">Поставки оборудования </a>
+                    <a href="#">ИСБ "Стрелец - Интеграл " </a>
+                    <a href="#">Приемно-контрольные приборы </a>
+                    <a href="#">Извещатели пожарные </a>
+                    <a href="#">Извещатели охранные для помещений </a>
+                    <a href="#">Извещатели охранные для наружной установки </a>
+                    <a href="#">Lorem ipsum dolor sit amet.</a>
+                    <a href="#">Lorem ipsum dolor sit amet amet</a>
+                </div>
+            </div>
+            <div class="menu-catalog__item">
+                <a class="menu-catalog__main-link" href="#2">Системы речевого оповещения
+                    <svg>
+                        <use href="#chevron"></use>
+                    </svg>
+                </a>
+                <div class="menu-catalog__sublinks">
+                    <a href="#">Поставки оборудования </a>
+                    <a href="#">ИСБ "Стрелец - Интеграл " </a>
+                    <a href="#">Приемно-контрольные приборы </a>
+                    <a href="#">Извещатели пожарные </a>
+                    <a href="#">Lorem ipsum dolor sit amet.</a>
+                    <a href="#">Lorem ipsum dolor sit amet amet</a>
+                    <a href="#">Извещатели охранные для помещений </a>
+                    <a href="#">Извещатели охранные для наружной установки </a>
+                </div>
+            </div>
+            <div class="menu-catalog__item">
+                <a class="menu-catalog__main-link" href="#3">Системы видеонаблюдения
+                    <svg>
+                        <use href="#chevron"></use>
+                    </svg>
+                </a>
+                <div class="menu-catalog__sublinks">
+                    <a href="#">Извещатели пожарные </a>
+                    <a href="#">Извещатели охранные для помещений </a>
+                    <a href="#">Поставки оборудования </a>
+                    <a href="#">ИСБ "Стрелец - Интеграл " </a>
+                    <a href="#">Приемно-контрольные приборы </a>
+                    <a href="#">Извещатели охранные для наружной установки </a>
+                    <a href="#">Lorem ipsum dolor sit amet.</a>
+                    <a href="#">Lorem ipsum dolor sit amet amet</a>
+                </div>
+            </div>
+            <div class="menu-catalog__item">
+                <a class="menu-catalog__main-link" href="#4">Системы контроля и управления доступом
+                    <svg>
+                        <use href="#chevron"></use>
+                    </svg>
+                </a>
+                <div class="menu-catalog__sublinks">
+                    <a href="#">Поставки оборудования </a>
+                    <a href="#">ИСБ "Стрелец - Интеграл " </a>
+                    <a href="#">Приемно-контрольные приборы </a>
+                    <a href="#">Извещатели пожарные </a>
+                    <a href="#">Извещатели охранные для помещений </a>
+                    <a href="#">Lorem ipsum dolor sit amet amet</a>
+                    <a href="#">Извещатели охранные для наружной установки </a>
+                    <a href="#">Lorem ipsum dolor sit amet.</a>
+                </div>
+            </div>
+            <div class="menu-catalog__item">
+                <a class="menu-catalog__main-link" href="#5">Источники питания
+                    <svg>
+                        <use href="#chevron"></use>
+                    </svg>
+                </a>
+                <div class="menu-catalog__sublinks">
+                    <a href="#">Извещатели охранные для помещений </a>
+                    <a href="#">Извещатели охранные для наружной установки </a>
+                    <a href="#">Lorem ipsum dolor sit amet.</a>
+                    <a href="#">Lorem ipsum dolor sit amet amet</a>
+                    <a href="#">Поставки оборудования </a>
+                    <a href="#">ИСБ "Стрелец - Интеграл " </a>
+                    <a href="#">Приемно-контрольные приборы </a>
+                    <a href="#">Извещатели пожарные </a>
                 </div>
             </div>
         </div>

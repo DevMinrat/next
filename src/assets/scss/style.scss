@@ -7,14 +7,14 @@ html {
   box-sizing: border-box;
   font-size: 10px;
 
-  @include breakpoint(1680px) {
+  @include breakpoint($xxl-bp) {
     font-size: calc(100vw / 1680 * 10);
   }
-  @include breakpoint(1440px) {
-    font-size: calc(100vw / 1440 * 10);
-  }
+  // @include breakpoint(1440px) {
+  //   font-size: calc(100vw / 1440 * 10);
+  // }
   @include breakpoint($xl-bp) {
-    font-size: calc(100vw / 1385 * 10);
+    font-size: calc(100vw / 1366 * 10);
   }
   @include breakpoint($lg-bp) {
     font-size: calc(100vw / 830 * 10);
@@ -46,6 +46,10 @@ body {
 
 main {
   padding-top: 6.4rem;
+
+  @include breakpoint($lg-bp) {
+    padding-top: 16rem;
+  }
 }
 
 img {
@@ -110,4 +114,8 @@ svg {
 
 .show {
   display: block;
+}
+
+.noscroll {
+  overflow: hidden;
 }

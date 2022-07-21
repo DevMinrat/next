@@ -1,12 +1,32 @@
 .documents-main__inner {
   display: flex;
   align-items: flex-start;
+
+  @include breakpoint($lg-bp) {
+    flex-wrap: wrap;
+  }
 }
 
 .documents-main__content {
   column-count: 2;
 
   margin-right: 2.6rem;
+
+  @include breakpoint($lg-bp) {
+    margin-right: 0;
+    olumn-count: unset;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  @include breakpoint($sm-bp) {
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+
+    margin-bottom: 4rem;
+  }
 }
 
 .documents-main__link {
@@ -16,12 +36,21 @@
   font-size: 2rem;
   font-weight: 600;
 
+  @include breakpoint($sm-bp) {
+    font-size: 1.6rem;
+  }
+
   & + & {
     margin-top: 2.4rem;
+
+    @include breakpoint($lg-bp) {
+      margin-top: 0;
+    }
   }
 
   svg {
-    width: 2.4rem;
+    width: 100%;
+    max-width: 2.4rem;
     height: 2.4rem;
 
     fill: $primary;
@@ -29,6 +58,10 @@
     margin-left: 1.6rem;
 
     opacity: 0;
+
+    @include breakpoint($sm-bp) {
+      margin-left: 0.6rem;
+    }
   }
 
   &:hover {

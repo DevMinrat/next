@@ -1,3 +1,22 @@
+.header {
+  @include breakpoint($lg-bp) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+
+    transition: all 0.2s linear;
+    transform: translateY(0);
+
+    background-color: #fff;
+
+    &.out {
+      transform: translateY(-100%);
+    }
+  }
+}
+
 .header__top {
   display: flex;
   align-items: center;
@@ -13,6 +32,14 @@
 
   width: 100%;
   max-width: 110rem;
+
+  @include breakpoint($xl-bp) {
+    max-width: 95rem;
+  }
+
+  @include breakpoint($lg-bp) {
+    display: none;
+  }
 }
 
 .header-logo {
@@ -34,6 +61,10 @@
   max-width: 23.2rem;
 
   font-weight: 600;
+
+  @include breakpoint($sm-bp) {
+    font-size: 1.2rem;
+  }
 }
 
 .header-phones {
@@ -54,6 +85,10 @@
 
   width: 100%;
   max-width: 32.5rem;
+
+  @include breakpoint($xl-bp) {
+    max-width: 24rem;
+  }
 
   input {
     width: 100%;
@@ -119,6 +154,10 @@
 
   transition: transform 0.2s linear;
   transform: translateY(0);
+
+  @include breakpoint($lg-bp) {
+    position: static;
+  }
 }
 
 .header-bottom.fixed {
@@ -165,17 +204,206 @@
   }
 }
 
+.header-nav {
+  @include breakpoint($lg-bp) {
+    position: absolute;
+    top: -9.6rem;
+    left: 0;
+    z-index: 1080;
+
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 10rem 2rem 3rem;
+
+    background-color: #fff;
+
+    overflow-y: auto;
+
+    transform: translateX(100%);
+    transition: all 0.2s linear;
+
+    &.active {
+      transform: translateX(0);
+    }
+
+    .header-nav__list {
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 1rem;
+
+      margin-bottom: 5rem;
+    }
+
+    .header-nav__list-item + .header-nav__list-item {
+      margin-left: 0;
+      padding-right: 0;
+    }
+
+    .header-nav__item-link {
+      color: $black;
+    }
+
+    .header-nav__list-item--dropdown .header-nav__item-link {
+      justify-content: flex-end;
+      padding-right: 1.1rem;
+      cursor: pointer;
+      svg {
+        fill: $black;
+      }
+    }
+
+    .header-nav__list-item--dropdown:hover .header-nav__item-link {
+      color: $secondary;
+      background: none;
+
+      svg {
+        fill: $secondary;
+      }
+    }
+
+    .header-nav__list-item--dropdown:hover .header-nav__item-sublinks {
+      display: grid;
+    }
+
+    .header-nav__list-item--dropdown .header-nav__item-sublinks {
+      position: static;
+      display: grid;
+      justify-content: flex-end;
+
+      border: none;
+
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.2s linear;
+
+      a {
+        text-align: right;
+        color: #9ba0a3;
+
+        &:hover {
+          background: none;
+          color: $primary;
+        }
+      }
+    }
+  }
+
+  .header-content--mob {
+    display: none;
+
+    @include breakpoint($lg-bp) {
+      display: flex;
+      flex-wrap: wrap;
+
+      margin-top: auto;
+
+      .header-delivery {
+        width: 100%;
+        margin-bottom: 2rem;
+      }
+    }
+
+    @include breakpoint($sm-bp) {
+      .header-phones {
+        width: 100%;
+        justify-content: space-between;
+        margin-bottom: 2rem;
+      }
+      .header-search {
+        max-width: unset;
+      }
+    }
+  }
+}
+
 .header-nav__list {
   display: flex;
+  align-items: center;
 }
 
 .header-nav__list-item {
   & + & {
     margin-left: 12rem;
+
+    @include breakpoint($xl-bp) {
+      margin-left: 8rem;
+    }
+  }
+
+  &--dropdown {
+    position: relative;
+
+    .header-nav__item-link {
+      display: flex;
+      align-items: center;
+      position: relative;
+
+      padding-right: 4.6rem;
+
+      background-color: transparent;
+      border-radius: 0.4rem;
+
+      transition: all 0.1s linear;
+
+      svg {
+        width: 1.6rem;
+        height: 1.6rem;
+
+        fill: white;
+
+        margin-left: 0.8rem;
+      }
+    }
+
+    .header-nav__item-sublinks {
+      display: none;
+      position: absolute;
+      top: 3.7rem;
+      left: 0;
+      z-index: 1050;
+
+      width: 100%;
+
+      flex-direction: column;
+
+      background: #ffffff;
+      border: 0.1rem solid $secondary;
+      border-radius: 0 0 0.4rem 0.4rem;
+
+      a {
+        font-size: 1.4rem;
+
+        padding: 0.8rem 1.6rem;
+
+        &:hover {
+          color: white;
+          background-color: $primary;
+        }
+      }
+    }
+
+    &:hover {
+      .header-nav__item-sublinks {
+        display: flex;
+      }
+
+      .header-nav__item-link {
+        color: white;
+
+        background-color: $secondary;
+        border-radius: 0.4rem 0.4rem 0 0;
+      }
+    }
   }
 }
 
 .header-nav__item-link {
+  padding: 0.65rem 1.1rem;
+
   color: white;
 
   &:hover {
@@ -235,4 +463,289 @@
 
 .header-cart__info-price {
   font-size: 1.6rem;
+}
+
+/// menu-catalog
+
+.menu-catalog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1060;
+
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+
+  overflow: hidden;
+
+  transform: translateX(-100%);
+
+  background: rgba(55, 65, 71, 0.6);
+
+  &.active {
+    transform: translateX(0);
+
+    .menu-catalog__inner {
+      transform: translateX(0);
+    }
+  }
+
+  @include breakpoint($lg-bp) {
+    position: absolute;
+    top: 16rem;
+
+    transition: all 0.2s linear;
+
+    overflow-y: auto;
+
+    height: 100%;
+
+    padding-bottom: 16rem;
+
+    .menu-catalog__inner {
+      transform: none;
+    }
+  }
+}
+
+.menu-catalog__inner {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  max-width: 45rem;
+  min-height: 100vh;
+
+  padding: 2.4rem 2rem;
+  padding-right: 0;
+
+  background-color: #fff;
+
+  transform: translateX(-100%);
+  transition: all 0.2s linear;
+
+  @include breakpoint($lg-bp) {
+    width: 100%;
+    max-width: unset;
+
+    height: auto;
+    min-height: calc(100vh - 16rem);
+
+    transform: none;
+  }
+}
+
+.menu-catalog__close {
+  position: absolute;
+  right: 5rem;
+  top: 2rem;
+  z-index: 1060;
+
+  border: none;
+  background: none;
+
+  &:hover {
+    svg {
+      fill: $secondary;
+    }
+  }
+
+  svg {
+    width: 4rem;
+    height: 4rem;
+
+    fill: white;
+  }
+
+  @include breakpoint($lg-bp) {
+    display: none;
+  }
+}
+
+.menu-catalog__item {
+  &:hover {
+    .menu-catalog__main-link {
+      color: white;
+
+      background-color: $primary;
+
+      @include breakpoint($lg-bp) {
+        svg {
+          fill: white;
+        }
+      }
+    }
+
+    & .menu-catalog__sublinks {
+      display: flex;
+    }
+
+    & ~ .menu-catalog__close {
+      left: 92rem;
+    }
+  }
+}
+
+.menu-catalog__main-link {
+  display: block;
+
+  padding: 0.8rem 2rem;
+  margin-right: 2rem;
+
+  background-color: transparent;
+  border-radius: 0.8rem;
+
+  svg {
+    display: none;
+    width: 1.6rem;
+    height: 1.6rem;
+
+    fill: $black;
+  }
+
+  @include breakpoint($lg-bp) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &:hover {
+      color: $secondary;
+    }
+
+    svg {
+      display: block;
+    }
+
+    &.active {
+      color: white;
+
+      background-color: $primary;
+
+      svg {
+        fill: white;
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+
+.menu-catalog__sublinks {
+  position: absolute;
+  top: 0;
+  left: 45rem;
+  z-index: 1060;
+
+  display: none;
+  flex-direction: column;
+
+  width: 100%;
+  max-width: 45rem;
+  height: 100vh;
+
+  padding: 4.2rem 3.2rem;
+
+  background-color: #fff;
+  border-left: 0.2rem solid #eceeef;
+
+  @include breakpoint($lg-bp) {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    padding: 0rem 3rem;
+
+    border-left: none;
+
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.1s linear;
+  }
+
+  a {
+    color: #7e8b94;
+
+    @include breakpoint($lg-bp) {
+      margin-top: 2rem;
+
+      &:last-child {
+        margin-bottom: 2rem;
+      }
+    }
+
+    &:hover {
+      color: none;
+      text-decoration: underline;
+    }
+  }
+
+  a + a {
+    margin-top: 2rem;
+  }
+}
+
+.burger-menu {
+  display: none;
+  position: relative;
+  z-index: 1000;
+
+  width: 3.2rem;
+  height: 3.2rem;
+  background: white;
+
+  border: 0.1rem solid #ffffff;
+  border-radius: 0.4rem;
+
+  cursor: pointer;
+
+  @include breakpoint($lg-bp) {
+    display: block;
+  }
+}
+
+.burger {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.burger,
+.burger::before,
+.burger::after {
+  position: absolute;
+  left: 50%;
+  z-index: 100;
+  transform: translateX(-50%);
+  display: block;
+  width: 2rem;
+  height: 0.2rem;
+  background-color: $primary;
+  border-radius: 2.5rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.burger::before {
+  content: "";
+  top: 0.5rem;
+}
+
+.burger::after {
+  content: "";
+  bottom: 0.5rem;
+}
+
+.burger-menu.menu-on .burger {
+  background: rgba(0, 0, 0, 0);
+}
+
+.burger-menu.menu-on .burger::before {
+  transform: translateX(-50%) rotate(45deg);
+  top: 0;
+}
+
+.burger-menu.menu-on .burger::after {
+  transform: translateX(-50%) rotate(-45deg);
+  bottom: 0;
 }
