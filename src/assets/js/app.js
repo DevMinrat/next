@@ -356,3 +356,27 @@ if (modals.length > 0) {
     });
   });
 }
+
+// license magnific popup
+
+$(document).ready(function () {
+  let magnPopupOptions = {
+    delegate: "a",
+    type: "image",
+    closeOnContentClick: false,
+    closeBtnInside: false,
+    mainClass: "mfp-with-zoom mfp-img-mobile",
+    gallery: {
+      enabled: true,
+    },
+    zoom: {
+      enabled: true,
+      duration: 300,
+      opener: function (element) {
+        return element.find("img");
+      },
+    },
+  };
+
+  $(".license__inner").magnificPopup(magnPopupOptions);
+});
