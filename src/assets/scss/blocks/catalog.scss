@@ -1,10 +1,14 @@
 .catalog-item {
-  max-height: 44.4rem;
+  min-height: 44.4rem;
 
   padding: 4rem;
 
   background: #eceeef;
   border-radius: 1.6rem;
+
+  @include breakpoint($sm-bp) {
+    padding: 2rem;
+  }
 
   & + & {
     margin-top: 4rem;
@@ -13,6 +17,16 @@
 
 .catalog-item__content {
   display: flex;
+  align-items: flex-start;
+
+  @include breakpoint($lg-bp) {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  @include breakpoint($sm-bp) {
+    gap: 1.6rem;
+  }
 }
 
 .catalog-item__heading {
@@ -21,6 +35,12 @@
   line-height: 1.2;
 
   margin-bottom: 4rem;
+
+  @include breakpoint($sm-bp) {
+    font-size: 2rem;
+
+    margin-bottom: 1.6rem;
+  }
 }
 
 .catalog-item__img {
@@ -29,16 +49,30 @@
   height: auto;
 
   margin-right: 3rem;
+
+  @include breakpoint($xl-bp) {
+    max-width: 40rem;
+  }
+
+  @include breakpoint($lg-bp) {
+    margin-right: 0;
+    margin: 0 auto;
+  }
+  @include breakpoint($sm-bp) {
+    max-width: unset;
+  }
 }
 
 .catalog-item__links {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 1rem 3rem;
 
   width: 100%;
-  max-height: 29rem;
+
+  @include breakpoint($sm-bp) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .catalog-item__links-item {
@@ -47,6 +81,10 @@
 
   width: 100%;
   max-width: 40rem;
+
+  @include breakpoint($sm-bp) {
+    font-size: 1.4rem;
+  }
 
   &:hover {
     color: $primary;
@@ -68,9 +106,18 @@
     fill: $primary;
 
     opacity: 0;
+
+    @include breakpoint($sm-bp) {
+      display: none;
+    }
   }
 }
 
 .catalog-item__link {
   align-self: flex-end;
+
+  @include breakpoint($sm-bp) {
+    width: 100%;
+    justify-content: center;
+  }
 }

@@ -10,6 +10,19 @@
   background: #ffffff;
   box-shadow: 0 0.4rem 2rem rgba(0, 131, 221, 0.15);
   border-radius: 1.6rem;
+
+  @include breakpoint($sm-bp) {
+    height: 100%;
+
+    border-radius: 0;
+    box-shadow: none;
+
+    padding: 2rem;
+  }
+
+  .custom-checkbox + label {
+    text-align: left;
+  }
 }
 
 .form-heading {
@@ -19,6 +32,10 @@
   color: $secondary;
 
   margin-bottom: 1.3rem;
+
+  @include breakpoint($sm-bp) {
+    font-size: 2.8rem;
+  }
 }
 
 .form-input {

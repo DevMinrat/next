@@ -5,12 +5,22 @@
 .prodp-gallery {
   width: 100%;
   max-width: 40rem;
+
+  @include breakpoint($sm-bp) {
+    margin-bottom: 4rem;
+  }
 }
 
 .prodp-gallery__main {
   width: 100%;
 
   margin-bottom: 3rem;
+
+  @include breakpoint($sm-bp) {
+    max-width: 33.5rem;
+
+    margin-bottom: 4rem;
+  }
 }
 
 .prodp-gallery__main-item {
@@ -39,6 +49,16 @@
   gap: 0rem 3rem;
 
   margin-bottom: 8rem;
+
+  @include breakpoint($lg-bp) {
+    grid-template-columns: 35rem 1fr;
+  }
+
+  @include breakpoint($sm-bp) {
+    grid-template-columns: 1fr;
+
+    margin-bottom: 4rem;
+  }
 }
 
 .prodp__heading {
@@ -51,10 +71,26 @@
   grid-row: 1/2;
 
   margin-bottom: 4rem;
+
+  @include breakpoint($lg-bp) {
+    font-size: 2.8rem;
+  }
+
+  @include breakpoint($sm-bp) {
+    grid-column: 1/2;
+    grid-row: 1/2;
+
+    margin-bottom: 2rem;
+  }
 }
 
 .prodp-gallery {
   grid-row: 1/4;
+
+  @include breakpoint($sm-bp) {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
 }
 
 .prodp-data__content {
@@ -63,8 +99,17 @@
 
   grid-row: 2/3;
 
+  @include breakpoint($sm-bp) {
+    grid-column: 1/2;
+    grid-row: 3/4;
+  }
+
   .product-data__info {
     margin-bottom: 6rem;
+
+    @include breakpoint($sm-bp) {
+      margin-bottom: 4rem;
+    }
   }
 
   .product-data__prices {
@@ -118,6 +163,10 @@
 
 .prodp-info {
   margin-bottom: 12rem;
+
+  @include breakpoint($sm-bp) {
+    margin-bottom: 9rem;
+  }
 }
 
 .prodp-info__navs {
@@ -137,6 +186,10 @@
 
   & + & {
     margin-left: 4rem;
+
+    @include breakpoint($sm-bp) {
+      margin-left: 2rem;
+    }
   }
 
   &.tabs-btn_active {
@@ -148,6 +201,10 @@
 
 .prodp-info__tab {
   display: none;
+
+  @include breakpoint($sm-bp) {
+    font-size: 1.4rem;
+  }
 
   ul {
     list-style: disc outside;
@@ -190,15 +247,56 @@
   &.tabs-pane_show {
     display: block;
   }
+
+  .dp-item__docs-item {
+    margin-left: 0;
+  }
+
+  .dp-item__docs-item + .dp-item__docs-item {
+    margin-top: 2rem;
+  }
+}
+
+.product-page-wrapper {
+  .similar-products,
+  .viewed-products {
+    margin-left: 52rem;
+
+    @include breakpoint($xl-bp) {
+      margin-left: 0;
+    }
+  }
 }
 
 .similar-products,
 .viewed-products {
+  position: relative;
+
   .swiper-wrapper {
     height: 50.7rem;
   }
 
+  .swiper-pagination {
+    display: none;
+
+    @include breakpoint($sm-bp) {
+      display: block;
+
+      z-index: 0 !important;
+      bottom: 8rem !important;
+    }
+  }
+
   .page-heading {
     font-size: 3.2rem;
+
+    @include breakpoint($sm-bp) {
+      font-size: 2.8rem;
+    }
   }
+}
+
+.similar-products-slider,
+.viewed-products-slider {
+  position: relative;
 }

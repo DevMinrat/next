@@ -45,6 +45,10 @@
 .header-logo {
   display: flex;
   align-items: center;
+
+  @include breakpoint($xl-bp) {
+    margin-right: 1.5rem;
+  }
 }
 
 .header-logo__icon {
@@ -54,6 +58,17 @@
   fill: $secondary;
 
   margin-right: 3.5rem;
+
+  @include breakpoint($xl-bp) {
+    width: 10rem;
+  }
+  @include breakpoint($lg-bp) {
+    width: 15.5rem;
+  }
+  @include breakpoint($sm-bp) {
+    width: 10rem;
+    margin-right: 2rem;
+  }
 }
 
 .header-logo__descr {
@@ -186,14 +201,6 @@
 
   transition: all 0.1s linear;
 
-  &:hover {
-    color: $secondary;
-
-    svg {
-      fill: $secondary;
-    }
-  }
-
   svg {
     width: 2.4rem;
     height: 2.4rem;
@@ -201,6 +208,73 @@
     fill: white;
 
     margin-right: 1.5rem;
+  }
+}
+
+.catalog-burger {
+  position: relative;
+  z-index: 1000;
+
+  width: 32px;
+  height: 32px;
+
+  cursor: pointer;
+
+  margin-right: 1rem;
+
+  @include breakpoint($sm-bp) {
+    width: 16px;
+    height: 16px;
+  }
+
+  .burger {
+    top: 48%;
+    transform: translateY(-50%);
+  }
+
+  .burger,
+  .burger::before,
+  .burger::after {
+    position: absolute;
+    left: 50%;
+    z-index: 100;
+    transform: translateX(-50%);
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: white;
+    border-radius: 2.5rem;
+    transition: all 0.3s ease-in-out;
+
+    @include breakpoint($sm-bp) {
+      width: 100%;
+    }
+  }
+
+  .burger::before {
+    content: "";
+    top: 5px;
+  }
+
+  .burger::after {
+    content: "";
+    bottom: 5px;
+  }
+}
+
+@include breakpoint($lg-bp) {
+  .catalog-btn.menu-on .burger {
+    background: rgba(0, 0, 0, 0);
+  }
+
+  .catalog-btn.menu-on .burger::before {
+    transform: translateX(-50%) rotate(45deg);
+    top: 0;
+  }
+
+  .catalog-btn.menu-on .burger::after {
+    transform: translateX(-50%) rotate(-45deg);
+    bottom: 0;
   }
 }
 
@@ -477,7 +551,7 @@
   height: 100%;
   min-height: 100vh;
 
-  overflow: hidden;
+  overflow: auto;
 
   transform: translateX(-100%);
 
@@ -493,7 +567,7 @@
 
   @include breakpoint($lg-bp) {
     position: absolute;
-    top: 16rem;
+    top: 16.5rem;
 
     transition: all 0.2s linear;
 
@@ -507,6 +581,10 @@
       transform: none;
     }
   }
+
+  @include breakpoint($sm-bp) {
+    top: 16.7rem;
+  }
 }
 
 .menu-catalog__inner {
@@ -516,10 +594,10 @@
   flex-direction: column;
 
   width: 100%;
-  max-width: 45rem;
+  max-width: 19%;
   min-height: 100vh;
 
-  padding: 2.4rem 2rem;
+  padding: 2.4rem 1rem;
   padding-right: 0;
 
   background-color: #fff;
@@ -540,7 +618,7 @@
 
 .menu-catalog__close {
   position: absolute;
-  right: 5rem;
+  right: 2.8rem;
   top: 2rem;
   z-index: 1060;
 
@@ -566,9 +644,13 @@
 }
 
 .menu-catalog__item {
+  display: flex;
+  flex-direction: column;
+
   &:hover {
-    .menu-catalog__main-link {
+    & > .menu-catalog__main-link {
       color: white;
+      text-decoration: none;
 
       background-color: $primary;
 
@@ -579,7 +661,7 @@
       }
     }
 
-    & .menu-catalog__sublinks {
+    & > .menu-catalog__sublinks {
       display: flex;
     }
 
@@ -592,8 +674,8 @@
 .menu-catalog__main-link {
   display: block;
 
-  padding: 0.8rem 2rem;
-  margin-right: 2rem;
+  padding: 0.8rem 1rem;
+  margin-right: 1rem;
 
   background-color: transparent;
   border-radius: 0.8rem;
@@ -635,17 +717,18 @@
 .menu-catalog__sublinks {
   position: absolute;
   top: 0;
-  left: 45rem;
+  left: 100%;
   z-index: 1060;
 
   display: none;
   flex-direction: column;
 
   width: 100%;
-  max-width: 45rem;
-  height: 100vh;
+  max-width: 100%;
+  height: 100%;
+  min-height: 100vh;
 
-  padding: 4.2rem 3.2rem;
+  padding: 2.2rem 0rem 2.2rem 1rem;
 
   background-color: #fff;
   border-left: 0.2rem solid #eceeef;
@@ -655,6 +738,7 @@
     display: flex;
     flex-direction: column;
     height: 100%;
+    min-height: unset;
 
     padding: 0rem 3rem;
 
@@ -665,14 +749,24 @@
     transition: all 0.1s linear;
   }
 
-  a {
-    color: #7e8b94;
+  @include breakpoint($sm-bp) {
+    padding: 0rem 0.5rem;
+  }
 
+  a {
     @include breakpoint($lg-bp) {
       margin-top: 2rem;
 
       &:last-child {
         margin-bottom: 2rem;
+      }
+    }
+
+    @include breakpoint($sm-bp) {
+      margin-top: 0.7rem;
+
+      &:last-child {
+        margin-bottom: 0.7rem;
       }
     }
 
@@ -682,8 +776,9 @@
     }
   }
 
-  a + a {
-    margin-top: 2rem;
+  a:not(.menu-catalog__main-link) {
+    color: #7e8b94;
+    padding: 0.8rem 1rem;
   }
 }
 
@@ -692,8 +787,8 @@
   position: relative;
   z-index: 1000;
 
-  width: 3.2rem;
-  height: 3.2rem;
+  width: 32px;
+  height: 32px;
   background: white;
 
   border: 0.1rem solid #ffffff;
@@ -719,8 +814,8 @@
   z-index: 100;
   transform: translateX(-50%);
   display: block;
-  width: 2rem;
-  height: 0.2rem;
+  width: 20px;
+  height: 2px;
   background-color: $primary;
   border-radius: 2.5rem;
   transition: all 0.3s ease-in-out;
@@ -728,12 +823,12 @@
 
 .burger::before {
   content: "";
-  top: 0.5rem;
+  top: 5px;
 }
 
 .burger::after {
   content: "";
-  bottom: 0.5rem;
+  bottom: 5px;
 }
 
 .burger-menu.menu-on .burger {

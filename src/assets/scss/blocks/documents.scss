@@ -1,3 +1,17 @@
+.documents-page {
+  .page-heading {
+    @include breakpoint($sm-bp) {
+      margin-bottom: 4rem;
+    }
+  }
+
+  &.section {
+    @include breakpoint($sm-bp) {
+      margin-bottom: 4rem;
+    }
+  }
+}
+
 .documents-main__inner {
   display: flex;
   align-items: flex-start;
@@ -88,10 +102,18 @@
   &:first-child {
     border-top: 0.1rem solid #cfd4d7;
   }
+
+  @include breakpoint($sm-bp) {
+    row-gap: 1.6rem;
+  }
 }
 
 .dp-item__header {
   display: flex;
+
+  @include breakpoint($lg-bp) {
+    flex-direction: column;
+  }
 }
 
 .dp-item__heading {
@@ -99,12 +121,29 @@
   font-weight: 600;
   line-height: 1.2;
   color: $black;
+
+  @include breakpoint($lg-bp) {
+    margin-bottom: 2rem;
+  }
+  @include breakpoint($sm-bp) {
+    margin-bottom: 1.6rem;
+  }
 }
 
 .dp-item__docs {
   display: flex;
 
   margin-left: 6.4rem;
+
+  @include breakpoint($lg-bp) {
+    flex-wrap: wrap;
+
+    margin-left: 0;
+  }
+
+  @include breakpoint($sm-bp) {
+    flex-direction: column;
+  }
 }
 
 .dp-doc {
@@ -112,7 +151,12 @@
   align-items: center;
 
   & + & {
-    margin-left: 6.4rem;
+    margin-left: 3.4rem;
+
+    @include breakpoint($sm-bp) {
+      margin-left: 0;
+      margin-top: 0.8rem;
+    }
   }
 }
 
@@ -139,16 +183,56 @@
   max-width: 69rem;
 }
 
+.dp-item__links-dropdown {
+  display: none;
+  align-items: center;
+
+  color: $secondary;
+  cursor: pointer;
+
+  @include breakpoint($sm-bp) {
+    justify-content: space-between;
+  }
+
+  svg {
+    width: 2.4rem;
+    height: 2.4rem;
+
+    fill: $secondary;
+
+    margin-left: 1.6rem;
+  }
+
+  &.rolled {
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+
+  @include breakpoint($lg-bp) {
+    display: flex;
+  }
+}
+
 .dp-item__links {
   display: grid;
   grid-template-columns: repeat(auto-fit, 39.8rem);
   gap: 1.6rem 3rem;
+
+  @include breakpoint($lg-bp) {
+    grid-template-columns: repeat(auto-fit, 37rem);
+
+    max-height: 0;
+    overflow: hidden;
+
+    transition: all 0.2s linear;
+  }
 }
 
 .dp-item__links-item {
   display: block;
 
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   line-height: 1.2;
   color: $secondary;
 }

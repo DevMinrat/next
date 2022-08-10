@@ -13,6 +13,14 @@ const promotionsSlider = new Swiper(".promotions-slider", {
   spaceBetween: 30,
 });
 
+function togglePromotionsSlider() {
+  if (window.innerWidth < 500) {
+    promotionsSlider.disable();
+  } else {
+    promotionsSlider.enable();
+  }
+}
+
 document.querySelectorAll(".license-item__slider").forEach((el) => {
   new Swiper(el, {
     slidesPerView: "auto",
@@ -53,9 +61,44 @@ let productSliderMain = new Swiper(".prodp-gallery__main", {
 const similarProductSlider = new Swiper(".similar-products-slider", {
   slidesPerView: "auto",
   spaceBetween: 30,
+
+  pagination: {
+    el: ".swiper-pagination",
+    type: "progressbar",
+  },
 });
 
 const viewedProductSlider = new Swiper(".viewed-products-slider", {
   slidesPerView: "auto",
   spaceBetween: 30,
+
+  pagination: {
+    el: ".swiper-pagination",
+    type: "progressbar",
+  },
+});
+
+const projectsSlider = new Swiper(".projects-slider", {
+  slidesPerView: "auto",
+  spaceBetween: 10,
+
+  pagination: {
+    el: ".swiper-pagination",
+    type: "progressbar",
+  },
+});
+
+toggleProjectsSlider();
+
+function toggleProjectsSlider() {
+  if (window.innerWidth > 920) {
+    projectsSlider.disable();
+  } else {
+    projectsSlider.enable();
+  }
+}
+
+window.addEventListener("resize", () => {
+  toggleProjectsSlider();
+  togglePromotionsSlider();
 });

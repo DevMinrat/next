@@ -1,6 +1,10 @@
 .intro {
   margin-top: 6.4rem;
   margin-bottom: 7rem;
+
+  @include breakpoint($sm-bp) {
+    margin-top: 4rem;
+  }
 }
 
 .intro-slider {
@@ -12,6 +16,11 @@
   max-width: 54rem;
   height: 30.8rem;
 
+  @include breakpoint($sm-bp) {
+    max-width: 33.5rem;
+    height: 19.2rem;
+  }
+
   img {
     width: 100%;
     height: 100%;
@@ -21,12 +30,31 @@
   }
 }
 
+.main-category {
+  .section-heading {
+    @include breakpoint($sm-bp) {
+      margin-bottom: 4rem;
+    }
+  }
+}
+
 .main-category__inner {
   position: relative;
 
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 3rem;
+
+  @include breakpoint($lg-bp) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  @include breakpoint($sm-bp) {
+    grid-template-columns: 1fr;
+
+    padding-bottom: 8.8rem;
+  }
 }
 
 .main-category__all {
@@ -34,6 +62,15 @@
   right: 0;
   top: -8.8rem;
   z-index: 1;
+
+  @include breakpoint($sm-bp) {
+    top: unset;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 19rem;
+  }
 }
 
 .main-category__item {
@@ -43,6 +80,12 @@
 
   background: #eceeef;
   border-radius: 0.8rem;
+
+  @include breakpoint($lg-bp) {
+    min-height: auto;
+
+    padding-bottom: 1.6rem;
+  }
 }
 
 .main-category__item-img {
@@ -50,6 +93,10 @@
   height: auto;
 
   margin-bottom: 2rem;
+
+  @include breakpoint($sm-bp) {
+    margin-bottom: 0.8rem;
+  }
 }
 
 .main-category__item-descr {
@@ -58,6 +105,10 @@
   line-height: 1.2;
 
   padding: 0 2rem;
+
+  @include breakpoint($sm-bp) {
+    font-size: 1.6rem;
+  }
 }
 
 .promotions {
@@ -66,17 +117,63 @@
   padding: 12rem 0;
   background-color: $primary;
 
+  @include breakpoint($sm-bp) {
+    height: unset;
+
+    padding: 4rem 0 8rem;
+  }
+
   & .section-heading {
     color: white;
   }
 }
 
+.promotions .section-heading {
+  @include breakpoint($sm-bp) {
+    margin-bottom: 4rem;
+    text-align: center;
+  }
+}
+
 .promotions__inner {
   position: relative;
+
+  @include breakpoint($sm-bp) {
+    padding-bottom: 9rem;
+  }
 }
 
 .promotions-slider .swiper-wrapper {
   height: 50.7rem;
+
+  @include breakpoint($sm-bp) {
+    height: unset;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 38.7rem;
+    gap: 2rem;
+
+    .product {
+      max-width: 33.5rem;
+      margin-right: 0 !important;
+
+      .product-img__wrapper {
+        max-width: 90%;
+        height: 17rem;
+
+        margin: 0 auto 1.3rem;
+
+        .product__img {
+          height: 100%;
+        }
+      }
+    }
+
+    .product:nth-child(n + 6) {
+      display: none;
+    }
+  }
 }
 
 .promotions__all.hollow-btn {
@@ -90,6 +187,13 @@
 
   svg {
     fill: white;
+  }
+
+  @include breakpoint($sm-bp) {
+    top: unset;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   &:hover {
@@ -108,6 +212,14 @@
     "n1 n2 n4"
     "n1 n3 n4";
   gap: 3rem;
+
+  @include breakpoint($lg-bp) {
+    grid-template-areas:
+      "n1 "
+      "n2"
+      "n3"
+      "n4";
+  }
 }
 
 .main-news .news-item:nth-child(2),
@@ -123,10 +235,21 @@
   }
 }
 
+.solutions .section-heading {
+  @include breakpoint($sm-bp) {
+    text-align: center;
+  }
+}
+
 .solutions__inner {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 3rem;
+
+  @include breakpoint($lg-bp) {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
 }
 
 .solutions-item__link {
@@ -149,6 +272,12 @@
 
   background: #fdf3e1;
   border-radius: 0.8rem;
+
+  @include breakpoint($sm-bp) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .solutions-item__content {
@@ -157,6 +286,10 @@
   justify-content: space-between;
 
   gap: 1rem;
+
+  @include breakpoint($sm-bp) {
+    margin-bottom: 1.6rem;
+  }
 }
 
 .solutions-item__heading {
@@ -173,23 +306,63 @@
 
 .partners-section .section-heading {
   margin-bottom: 7.5rem;
+
+  @include breakpoint($lg-bp) {
+    color: $black;
+    text-align: center;
+
+    margin-bottom: 4rem;
+  }
 }
 
 .partners-section__inner {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 6.4rem 8.5rem;
+
+  @include breakpoint($xl-bp) {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 4rem;
+
+    margin-bottom: 4rem;
+  }
+
+  @include breakpoint($lg-bp) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @include breakpoint($sm-bp) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .partners-section__item-img {
-  width: 20rem;
-  height: 9.6rem;
+  width: 100%;
+  height: auto;
   object-fit: cover;
+
+  @include breakpoint($lg-bp) {
+    &:nth-child(n + 13) {
+      display: none;
+    }
+  }
+}
+
+.partners-section__all-link {
+  width: max-content;
+
+  margin: 0 auto;
+
+  display: none;
+
+  @include breakpoint($lg-bp) {
+    display: flex;
+  }
 }
 
 .mc-all {
   position: fixed;
   top: 0;
+  left: 0;
   z-index: 1070;
 
   width: 100vw;
@@ -204,6 +377,13 @@
   transform: translateX(100%);
   transition: all 0.2s linear;
 
+  @include breakpoint($lg-bp) {
+    padding: 4rem;
+  }
+  @include breakpoint($sm-bp) {
+    padding: 2rem;
+  }
+
   &.active {
     transform: translateX(0);
   }
@@ -217,6 +397,15 @@
 
   background: none;
   border: none;
+
+  @include breakpoint($lg-bp) {
+    top: 5rem;
+    right: 5rem;
+  }
+  @include breakpoint($sm-bp) {
+    top: 2rem;
+    right: 2rem;
+  }
 
   &:hover {
     svg {
@@ -238,12 +427,24 @@
   color: $secondary;
 
   margin-bottom: 4.4rem;
+
+  @include breakpoint($lg-bp) {
+    font-size: 3.6rem;
+  }
+  @include breakpoint($sm-bp) {
+    font-size: 2rem;
+  }
 }
 
 .mc-all__inner {
   display: flex;
   flex-wrap: wrap;
   gap: 6.4rem 3rem;
+
+  @include breakpoint($lg-bp) {
+    flex-direction: column;
+    gap: 2rem;
+  }
 }
 
 .mc-all__item,
@@ -258,6 +459,60 @@
   color: $secondary;
 
   margin-bottom: 1rem;
+
+  svg {
+    display: none;
+    width: 1.6rem;
+    height: 1.6rem;
+
+    fill: $black;
+  }
+
+  @include breakpoint($lg-bp) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    color: $black;
+
+    &:hover {
+      color: $secondary;
+    }
+
+    svg {
+      display: block;
+    }
+
+    &.active {
+      color: $secondary;
+
+      svg {
+        fill: $secondary;
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  @include breakpoint($sm-bp) {
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
+}
+
+.mc-all__item-links {
+  @include breakpoint($lg-bp) {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.2s linear;
+
+    a {
+      color: #7e8b94;
+
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
 }
 
 .mc-all__item-links a + a {

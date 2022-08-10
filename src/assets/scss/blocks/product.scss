@@ -149,6 +149,8 @@
 
 .product-price__item-prop {
   font-size: 1.4rem;
+
+  margin-right: 0.5rem;
 }
 
 .product-price__item-value {
@@ -190,6 +192,10 @@
 .product-data__item-value {
   font-size: 1.2rem;
   color: #7e8b94;
+}
+
+.product-data__item-prop {
+  margin-right: 0.5rem;
 }
 
 a.product-data__item-value {

@@ -13,6 +13,10 @@
 
   & .page-heading {
     margin-bottom: 0;
+
+    @include breakpoint($sm-bp) {
+      margin-bottom: 1rem;
+    }
   }
 }
 
@@ -44,6 +48,10 @@
 
   border-bottom: 0.1rem solid #cfd4d7;
 
+  @include breakpoint($sm-bp) {
+    flex-direction: column;
+  }
+
   &:first-child {
     border-top: 0.1rem solid #cfd4d7;
   }
@@ -62,6 +70,19 @@
   line-height: 1.2;
 
   margin-bottom: 1.4rem;
+
+  @include breakpoint($sm-bp) {
+    margin-bottom: 1.6rem;
+  }
+}
+
+.license-item__data {
+  @include breakpoint($sm-bp) {
+    font-size: 1.4rem;
+    color: #7e8b94;
+
+    margin-bottom: 1.6rem;
+  }
 }
 
 .license-item__slider {

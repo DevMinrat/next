@@ -1,5 +1,9 @@
 .cart__inner {
   margin-bottom: 10rem;
+
+  @include breakpoint($sm-bp) {
+    margin-bottom: 0;
+  }
 }
 
 .cart-item {
@@ -11,6 +15,11 @@
   margin-bottom: 4rem;
 
   border-bottom: 0.1rem solid #cfd4d7;
+
+  @include breakpoint($lg-bp) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 .cart-item__info {
@@ -19,6 +28,16 @@
 
   width: 100%;
   max-width: 60rem;
+
+  @include breakpoint($lg-bp) {
+    max-width: unset;
+
+    margin-bottom: 4rem;
+  }
+
+  @include breakpoint($sm-bp) {
+    margin-bottom: 2rem;
+  }
 }
 
 .cart-item__img {
@@ -32,18 +51,39 @@
 .cart-item__descr-wrapper {
   display: flex;
   flex-direction: column;
+
+  @include breakpoint($lg-bp) {
+    flex-direction: column-reverse;
+  }
 }
 
 .cart-item__descr {
   font-weight: 600;
 
   margin-bottom: 1.8rem;
+
+  @include breakpoint($lg-bp) {
+    margin-bottom: 0;
+  }
+
+  @include breakpoint($sm-bp) {
+    font-size: 1.2rem;
+  }
 }
 
 .cart-item__retail-price {
   font-weight: 600;
   font-size: 2rem;
   color: #e67102;
+
+  @include breakpoint($lg-bp) {
+    margin-bottom: 1.6rem;
+  }
+
+  @include breakpoint($sm-bp) {
+    font-size: 1.2rem;
+    margin-bottom: 0.6rem;
+  }
 }
 
 .cart-item__actions {
@@ -53,12 +93,23 @@
   width: 100%;
   max-width: 77rem;
 
+  @include breakpoint($xl-bp) {
+    max-width: 50rem;
+  }
+  @include breakpoint($lg-bp) {
+    max-width: 100%;
+  }
+
   .product-counter {
     width: 100%;
     max-width: 13rem;
 
     margin-right: 14rem;
     margin-bottom: 0;
+
+    @include breakpoint($sm-bp) {
+      margin-right: 2rem;
+    }
   }
 }
 
@@ -66,6 +117,10 @@
   font-weight: 600;
   font-size: 2rem;
   color: #00459a;
+
+  @include breakpoint($sm-bp) {
+    font-size: 1.6rem;
+  }
 }
 
 .cart-item__actions-delete {
@@ -95,6 +150,11 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+
+  @include breakpoint($sm-bp) {
+    flex-direction: column;
+    align-items: flex-end;
+  }
 }
 
 .cart-result__price {
@@ -103,4 +163,16 @@
   color: $secondary;
 
   margin-right: 17.5rem;
+
+  @include breakpoint($sm-bp) {
+    margin-right: 0;
+    margin-bottom: 2rem;
+  }
+}
+
+.cart-result__price-btn {
+  @include breakpoint($sm-bp) {
+    width: 100%;
+    justify-content: center;
+  }
 }

@@ -48,7 +48,10 @@ main {
   padding-top: 6.4rem;
 
   @include breakpoint($lg-bp) {
-    padding-top: 16rem;
+    padding-top: 16.5rem;
+  }
+  @include breakpoint($sm-bp) {
+    padding-top: 16.7rem;
   }
 }
 
@@ -118,5 +121,5 @@ svg {
 }
 
 .noscroll {
-  overflow: hidden;
+  overflow: hidden !important;
 }

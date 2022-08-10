@@ -1,3 +1,9 @@
+.news-list.section {
+  @include breakpoint($sm-bp) {
+    margin-bottom: 4rem;
+  }
+}
+
 .news-list__inner {
   display: flex;
   align-items: flex-start;
@@ -10,6 +16,12 @@
 
   display: flex;
   flex-direction: column;
+
+  margin-right: 6rem;
+
+  @include breakpoint($lg-bp) {
+    margin-right: 0;
+  }
 
   .news-item {
     padding-bottom: 4rem;
@@ -26,6 +38,14 @@
   }
   .news-item__img {
     height: 33.5rem;
+
+    @include breakpoint($lg-bp) {
+      height: 30rem;
+    }
+
+    @include breakpoint($sm-bp) {
+      height: 14rem;
+    }
   }
 }
 
@@ -35,6 +55,14 @@
 
   display: grid;
   gap: 4rem;
+
+  @include breakpoint($xl-bp) {
+    max-width: 35rem;
+  }
+
+  @include breakpoint($lg-bp) {
+    display: none;
+  }
 
   img {
     width: 100%;

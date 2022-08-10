@@ -9,6 +9,10 @@
   margin-bottom: 1.6rem;
 
   border-radius: 0.8rem;
+
+  @include breakpoint($sm-bp) {
+    height: 13.5rem;
+  }
 }
 
 .news-item__heading {
@@ -18,6 +22,10 @@
   line-height: 1.2;
 
   margin-bottom: 0.8rem;
+
+  @include breakpoint($sm-bp) {
+    font-size: 1.6rem;
+  }
 }
 
 .news-item__descr {

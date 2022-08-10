@@ -32,6 +32,24 @@
   text-align: center;
 
   border-radius: 1.6rem;
+
+  @include breakpoint($sm-bp) {
+    top: 0;
+    left: 0;
+    transform: none;
+
+    height: 100%;
+
+    border-radius: 0;
+
+    .form {
+      padding-top: 7.4rem;
+    }
+
+    .form-heading {
+      margin-bottom: 4rem;
+    }
+  }
 }
 
 .modal-order__heading {
@@ -56,11 +74,26 @@
 
   transition: all 0.1s linear;
 
+  @include breakpoint($sm-bp) {
+    top: 0.8rem;
+    right: 0.8rem;
+
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
   svg {
     width: 4rem;
     height: 4rem;
 
     fill: white;
+
+    @include breakpoint($sm-bp) {
+      width: 2.4rem;
+      height: 2.4rem;
+
+      fill: #cfd4d7;
+    }
   }
 
   &:hover {
